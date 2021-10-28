@@ -9,7 +9,7 @@ const navItems = [
 function Nav() {
   return (
     <header className="flex fixed h-16 bg-midnight w-full text-white items-center justify-between px-55 z-50 shadow">
-      <div>Jonacius Villamor</div>
+      <h1>Jonacius Villamor</h1>
       <nav>
         <ul className="flex items-center gap-10">
           <li className="border-r pr-10">
