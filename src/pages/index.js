@@ -1,12 +1,13 @@
 import Image from "next/image";
+import WhatIOffer from "../sections/WhatIOffer/WhatIOffer";
+import Works from "../sections/Works/Works";
 
 export default function Home() {
   return (
     <div>
       <main>
-        <h1>
-          Welcome to <a href="https://nextjs.org">Next.jszxczxczcs!</a>
-        </h1>
+        <Works />
+        <WhatIOffer />
       </main>
     </div>
   );
