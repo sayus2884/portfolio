@@ -2,6 +2,7 @@ import { Page } from "./Layout.styles";
 
 import Nav from "../Nav/Nav";
 import Footer from "../Footer/Footer";
+import WorkModal from "../../sections/WorkModal/WorkModal";
 
 function Layout({ children }) {
   return (
@@ -9,6 +10,7 @@ function Layout({ children }) {
       <Nav />
       {children}
       <Footer />
+      <WorkModal />
     </div>
   );
 }
