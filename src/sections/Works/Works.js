@@ -22,11 +22,7 @@ const data = [
     title: `Wonderful 010`,
     description:
       "I will write clean, easy to read code so it would be easy to maintain, edit, create new feature without breaking existing ones.",
-    technologies: [
-      { name: "Next.js", url: "https://nextjs.org/" },
-      { name: "styled-components", url: "https://styled-components.com/" },
-      { name: "Tailwind CSS", url: "https://tailwindcss.com/" },
-    ],
+    technologies: [{ name: "Next.js", url: "https://nextjs.org/" }],
   },
   {
     image: "/images/face3.jpg",
@@ -36,7 +32,6 @@ const data = [
     technologies: [
       { name: "Next.js", url: "https://nextjs.org/" },
       { name: "styled-components", url: "https://styled-components.com/" },
-      { name: "Tailwind CSS", url: "https://tailwindcss.com/" },
     ],
   },
 ];
@@ -63,6 +58,28 @@ function Card({ src, title, description, technologies }) {
   const { openWorkModal } = useContext(ModalsContext);
   const { setSelectedWork } = useContext(WorkContext);
 
+  const joinStrings = (technologies) => {
+    let str = "";
+
+    if (technologies.length > 2) {
+      technologies.slice(0, 2).forEach((tech, i) => {
+        str += `${tech.name}, `;
+      });
+
+      str += `and more.`;
+    }
+
+    if (technologies.length === 1) {
+      str = `${technologies[0].name}.`;
+    }
+
+    if (technologies.length === 2) {
+      str = `${technologies[0].name} and ${technologies[1].name}.`;
+    }
+
+    return str;
+  };
+
   const handleOnClick = (event) => {
     event.preventDefault();
     setSelectedWork({ src, title, description, technologies });
@@ -85,8 +102,7 @@ function Card({ src, title, description, technologies }) {
         </div>
         <h3 className="mt-22 text-20 font-semibold">{title}</h3>
         <p className="text-center mt-12">
-          Developed with{" "}
-          {technologies ? technologies.map((tech, i) => <span key={i}>{tech.name},</span>) : null}
+          Developed with {technologies && joinStrings(technologies)}
         </p>
         <button
           onClick={handleOnClick}
