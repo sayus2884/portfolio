@@ -19,10 +19,10 @@ function Modal({ children, height = 500, width = 800, onClose, isOpen }) {
         <Container
           height={height}
           width={width}
-          className="relaive fixed bg-midnight z-40 top-1/2-nav left-1/2 transform-gpu -translate-x-1/2 -translate-y-1/2 px-40 py-45">
+          className="relaive fixed bg-midnight z-40 top-1/2-nav left-1/2 transform-gpu -translate-x-1/2 -translate-y-1/2 px-40 py-45 shadow rounded">
           {children}
 
-          <button className="absolute text-white right-0 top-0" onClick={handleOnClose}>
+          <button className="absolute text-white right-0 top-0 pr-22 pt-15" onClick={handleOnClose}>
             X
           </button>
         </Container>

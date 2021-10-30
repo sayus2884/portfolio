@@ -11,21 +11,33 @@ const data = [
     title: `Wonderful 010`,
     description:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-    technologies: ["Next.js", "styled-components", "Tailwind CSS"],
+    technologies: [
+      { name: "Next.js", url: "https://nextjs.org/" },
+      { name: "styled-components", url: "https://styled-components.com/" },
+      { name: "Tailwind CSS", url: "https://tailwindcss.com/" },
+    ],
   },
   {
     image: "/images/face2.jpg",
     title: `Wonderful 010`,
     description:
       "I will write clean, easy to read code so it would be easy to maintain, edit, create new feature without breaking existing ones.",
-    technologies: ["Next.js", "styled-components", "Tailwind CSS"],
+    technologies: [
+      { name: "Next.js", url: "https://nextjs.org/" },
+      { name: "styled-components", url: "https://styled-components.com/" },
+      { name: "Tailwind CSS", url: "https://tailwindcss.com/" },
+    ],
   },
   {
     image: "/images/face3.jpg",
     title: `Wonderful 010`,
     description:
       "I will write clean, easy to read code so it would be easy to maintain, edit, create new feature without breaking existing ones.",
-    technologies: ["Next.js", "styled-components", "Tailwind CSS"],
+    technologies: [
+      { name: "Next.js", url: "https://nextjs.org/" },
+      { name: "styled-components", url: "https://styled-components.com/" },
+      { name: "Tailwind CSS", url: "https://tailwindcss.com/" },
+    ],
   },
 ];
 
@@ -74,9 +86,7 @@ function Card({ src, title, description, technologies }) {
         <h3 className="mt-22 text-20 font-semibold">{title}</h3>
         <p className="text-center mt-12">
           Developed with{" "}
-          {technologies.map((tech, i) => (
-            <span key={i}>{tech},</span>
-          ))}
+          {technologies ? technologies.map((tech, i) => <span key={i}>{tech.name},</span>) : null}
         </p>
         <button
           onClick={handleOnClick}
