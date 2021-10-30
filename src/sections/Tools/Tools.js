@@ -25,9 +25,11 @@ const tools = [
   git,
 ];
 
-function Tools() {
+function Tools(props) {
   return (
-    <section className="bg-midnight flex flex-col justify-center items-center text-white px-55 py-120">
+    <section
+      {...props}
+      className="bg-midnight flex flex-col justify-center items-center text-white px-55 py-120">
       <h2 className="text-title mb-12">Known Tools</h2>
       <p className="mb-70">I am capable of transitioning to other technologies as well.</p>
       <div className="flex flex-wrap justify-center items-center h-full gap-120">

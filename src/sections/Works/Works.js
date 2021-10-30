@@ -36,9 +36,9 @@ const data = [
   },
 ];
 
-function Works() {
+function Works(props) {
   return (
-    <section className="bg-code-image bg-cover justify-center pt-16 h-800">
+    <section {...props} className="bg-code-image bg-cover justify-center pt-16 h-800">
       <div className="flex justify-center items-center h-full gap-25">
         {data.map(({ image, title, description, technologies }, i) => (
           <Card

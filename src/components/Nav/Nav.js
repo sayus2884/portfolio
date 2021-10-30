@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "./Nav.styles";
 
 const navItems = [
@@ -18,13 +19,17 @@ function Nav() {
 
           {navItems.map((item, i) => (
             <li key={i}>
-              <a className="cursor-pointer">{item.name}</a>
+              <Link href={item.route} passHref>
+                <a className="cursor-pointer">{item.name}</a>
+              </Link>
             </li>
           ))}
 
           <li>
             <button className="text-moonlight border border-moonlight px-10 py-8 rounded">
-              <a className="cursor-pointer">Get In Touch</a>
+              <Link href="#contact" passHref>
+                <a className="cursor-pointer">Get In Touch</a>
+              </Link>
             </button>
           </li>
         </ul>

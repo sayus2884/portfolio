@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Container } from "./Contact.styles";
 
-function Contact() {
+function Contact(props) {
   return (
-    <section className="flex items-center justify-center px-55 py-140 gap-100 text-white">
+    <section
+      {...props}
+      className="flex items-center justify-center px-55 py-140 gap-100 text-white">
       <h2 className="text-130 text-center leading-extra-loose tracking-wider font-semibold max-w-735 font-semibold">
         Ready <span className="text-moonlight">to build your website</span>?
       </h2>

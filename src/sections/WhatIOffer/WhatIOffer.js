@@ -23,9 +23,11 @@ const data = [
   },
 ];
 
-function WhatIOffer() {
+function WhatIOffer(props) {
   return (
-    <section className="px-55 py-120 bg-midnight text-white flex flex-col items-center justify-center gap-70">
+    <section
+      {...props}
+      className="px-55 py-120 bg-midnight text-white flex flex-col items-center justify-center gap-70">
       <h2 className="text-title font-semibold">What I Offer</h2>
       <div className="flex gap-45 max-w-1320">
         {data.map(({ image, title, description }, i) => (
