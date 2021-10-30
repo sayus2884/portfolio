@@ -1,5 +1,9 @@
+import { useContext } from "react";
 import Image from "next/image";
 import { Container } from "./Works.styles";
+
+import ModalsContext from "../../contexts/ModalsContext";
+import WorkContext from "../../contexts/WorkContext";
 
 const data = [
   {
@@ -44,6 +48,15 @@ function Works() {
 }
 
 function Card({ src, title, description, technologies }) {
+  const { openWorkModal } = useContext(ModalsContext);
+  const { setSelectedWork } = useContext(WorkContext);
+
+  const handleOnClick = (event) => {
+    event.preventDefault();
+    setSelectedWork({ src, title, description, technologies });
+    openWorkModal();
+  };
+
   return (
     <div className="bg-midnight w-300 h-360 rounded text-white shadow">
       <div className="relative flex flex-col items-center h-full px-25 py-35">
@@ -65,7 +78,9 @@ function Card({ src, title, description, technologies }) {
             <span key={i}>{tech},</span>
           ))}
         </p>
-        <button className="text-moonlight border border-moonlight px-10 py-8 rounded absolute bottom-35">
+        <button
+          onClick={handleOnClick}
+          className="text-moonlight border border-moonlight px-10 py-8 rounded absolute bottom-35">
           Learn More
         </button>
       </div>
