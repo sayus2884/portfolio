@@ -23,14 +23,28 @@ function Modal({ children, height = 500, width = 800, onClose, isOpen, ...props 
     }
   }, [onClose]);
 
+  const handleOnEscapePress = useCallback(
+    (event) => {
+      if (event.key === "Escape" && isOpen) {
+        onClose();
+      }
+    },
+    [onClose],
+  );
+
   useEffect(() => {
     if (isOpen) {
       document.addEventListener("mousedown", handleOnClickOutside);
+      document.addEventListener("keydown", handleOnEscapePress);
     } else {
       document.removeEventListener("mousedown", handleOnClickOutside);
+      document.removeEventListener("keydown", handleOnEscapePress);
     }
 
-    return removeEventListener("mousedown", handleOnClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleOnClickOutside);
+      document.removeEventListener("keydown", handleOnEscapePress);
+    };
   }, [isOpen]);
 
   return (
