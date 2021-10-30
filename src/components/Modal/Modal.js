@@ -29,7 +29,7 @@ function Modal({ children, height = 500, width = 800, onClose, isOpen, ...props 
         onClose();
       }
     },
-    [onClose],
+    [isOpen],
   );
 
   useEffect(() => {
