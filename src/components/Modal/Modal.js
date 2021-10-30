@@ -1,9 +1,13 @@
-import { cloneElement } from "react";
+import { useEffect, useRef, useCallback } from "react";
+import { AnimatePresence } from "framer-motion";
 import { Container } from "./Modal.styles";
 
 import Portal from "../Portal/Portal";
 
-function Modal({ children, height = 500, width = 800, onClose, isOpen }) {
+import { modalAnim, VARIANTS } from "../../styles/animations";
+
+function Modal({ children, height = 500, width = 800, onClose, isOpen, ...props }) {
+  const containerRef = useRef();
   const iconProps = {
     className: "h-25 w-25 text-moonlight",
   };
@@ -13,20 +17,43 @@ function Modal({ children, height = 500, width = 800, onClose, isOpen }) {
     onClose();
   };
 
+  const handleOnClickOutside = useCallback(() => {
+    if (containerRef && !containerRef.current.contains(event.target)) {
+      onClose();
+    }
+  }, [onClose]);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener("mousedown", handleOnClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleOnClickOutside);
+    }
+
+    return removeEventListener("mousedown", handleOnClickOutside);
+  }, [isOpen]);
+
   return (
     <Portal portalId="modal-root">
-      {isOpen && (
-        <Container
-          height={height}
-          width={width}
-          className="relaive fixed bg-midnight z-40 top-1/2-nav left-1/2 transform-gpu -translate-x-1/2 -translate-y-1/2 px-40 py-45 shadow rounded">
-          {children}
+      <AnimatePresence>
+        {isOpen && (
+          <Container
+            {...props}
+            {...modalAnim}
+            height={height}
+            width={width}
+            ref={containerRef}
+            className="relaive fixed bg-midnight z-40 top-1/2-nav left-1/2 transform-gpu -translate-x-1/2 -translate-y-1/2 px-40 py-45 shadow rounded">
+            {children}
 
-          <button className="absolute text-white right-0 top-0 pr-22 pt-15" onClick={handleOnClose}>
-            X
-          </button>
-        </Container>
-      )}
+            <button
+              className="absolute text-white right-0 top-0 pr-22 pt-15"
+              onClick={handleOnClose}>
+              X
+            </button>
+          </Container>
+        )}
+      </AnimatePresence>
     </Portal>
   );
 }
