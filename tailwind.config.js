@@ -29,13 +29,16 @@ module.exports = {
         100: "100px",
         120: "120px",
         135: "135px",
+        140: "140px",
         180: "180px",
         300: "300px",
         360: "360px",
+        420: "420px",
         500: "500px",
         800: "800px",
       },
       maxWidth: {
+        735: "735px",
         1320: "1320px",
       },
       fontSize: {
@@ -46,6 +49,10 @@ module.exports = {
         32: "32px",
         36: "36px",
         130: "130px",
+      },
+
+      lineHeight: {
+        "extra-loose": "10rem",
       },
 
       inset: {
