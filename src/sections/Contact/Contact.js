@@ -19,17 +19,28 @@ function Contact(props) {
 
 function Form() {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
   const handleMessageChange = (event) => {
     setMessage(event.target.value);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("send form here");
+  };
+
   return (
-    <form className="flex flex-col gap-24">
+    <form className="flex flex-col gap-24" onSubmit={handleSubmit}>
       <input
         className="bg-transparent border border-moonlight p-15 rounded"
         type="text"
@@ -37,6 +48,16 @@ function Form() {
         placeholder="Your Name"
         onChange={handleNameChange}
         value={name}
+        required
+      />
+
+      <input
+        className="bg-transparent border border-moonlight p-15 rounded"
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        onChange={handleEmailChange}
+        value={email}
         required
       />
 
