@@ -23,7 +23,7 @@ function Footer({ children }) {
       <ul className="flex items-center gap-22">
         {navItems.map((item, i) => (
           <li key={i}>
-            <a href={item.link} target="_blank" className="cursor-pointer">
+            <a href={item.link} target="_blank" rel="noreferrer" className="cursor-pointer">
               {cloneElement(item.image, iconProps)}
             </a>
           </li>
