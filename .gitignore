@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#google services
+gmail_service.json

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 import { Container } from "./Contact.styles";
 
 function Contact(props) {
@@ -36,7 +37,15 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("send form here");
+    axios
+      .post("/api/message", {
+        name,
+        email,
+        message,
+      })
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   return (
