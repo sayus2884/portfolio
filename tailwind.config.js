@@ -10,6 +10,7 @@ module.exports = {
         // Configure your color palette here
         midnight: "#1C1C1C",
         moonlight: "#FFCB6B",
+        cloudy: "#BABABA",
       },
       spacing: {
         8: "8px",
@@ -63,7 +64,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      textColor: ["disabled"],
+      borderColor: ["disabled"],
+      cursor: ["disabled"],
+    },
   },
   plugins: [],
 };
