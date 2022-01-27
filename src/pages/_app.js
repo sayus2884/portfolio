@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import "tailwindcss/tailwind.css";
 import { AnimatePresence } from "framer-motion";
-import Layout from "../components/Layout/Layout";
 
 import ModalsContext from "../contexts/ModalsContext";
 import WorkContext from "../contexts/WorkContext";
@@ -16,11 +15,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <ModalsContext.Provider value={workModalProps}>
       <WorkContext.Provider value={workProps}>
-        <Layout>
-          <AnimatePresence exitBeforeEnter>
-            <Component {...pageProps} />
-          </AnimatePresence>
-        </Layout>
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} />
+        </AnimatePresence>
       </WorkContext.Provider>
     </ModalsContext.Provider>
   );
