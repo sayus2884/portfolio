@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   -ms-overflow-style: none;
   -moz-osx-font-smoothing: grayscale;

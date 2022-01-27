@@ -1,6 +1,5 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
       animation: {
@@ -15,7 +14,8 @@ module.exports = {
         // Configure your color palette here
         chocolate: "#312B33",
         plum: "#E19783",
-        cloudy: "#BABABA",
+        gum: "#D15362",
+        blackberry: "#1B202F",
       },
       spacing: {
         8: "8px",
@@ -37,6 +37,7 @@ module.exports = {
         135: "135px",
         140: "140px",
         180: "180px",
+        250: "250px",
         300: "300px",
         360: "360px",
         420: "420px",
@@ -66,13 +67,6 @@ module.exports = {
         64: "16rem",
         "1/5": "20%",
       },
-    },
-  },
-  variants: {
-    extend: {
-      textColor: ["disabled"],
-      borderColor: ["disabled"],
-      cursor: ["disabled"],
     },
   },
   plugins: [],
