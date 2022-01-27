@@ -3,7 +3,7 @@ import Construction from "../sections/Construction/Construction";
 
 export default function Home() {
   return (
-    <div className="bg-midnight">
+    <div className="bg-chocolate">
       <main>
         <Construction id="works" />
       </main>

@@ -3,13 +3,18 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      animation: {
+        "spin-earth": "spin 80s linear infinite",
+        "spin-moon": "spin 15s linear infinite",
+        "spin-rays": "spin 100s linear reverse infinite",
+      },
       backgroundImage: {
         "code-image": "url('/images/code.jpg')",
       },
       colors: {
         // Configure your color palette here
-        midnight: "#1C1C1C",
-        moonlight: "#FFCB6B",
+        chocolate: "#312B33",
+        plum: "#E19783",
         cloudy: "#BABABA",
       },
       spacing: {
