@@ -3,7 +3,6 @@ import { POST } from "../../utils/methods";
 
 const post = (req, res) => {
   const { name, email, message } = req.body;
-  res.status(200).json(req.body);
 
   let transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
