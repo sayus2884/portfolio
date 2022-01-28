@@ -1,10 +1,10 @@
-function Input({ className, ...props }) {
+function Textarea({ className, ...props }) {
   return (
-    <input
+    <textarea
       className={`${className} border border-plum bg-transparent focus:ring-transparent focus:border-transparent`}
       {...props}
     />
   );
 }
 
-export default Input;
+export default Textarea;

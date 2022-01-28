@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { isEmail } from "validator";
+import axios from "axios";
 import Image from "next/image";
 
 import Card from "../components/Card/Card";
 import Input from "../components/Input/Input";
+import Textarea from "../components/Textarea/Textarea";
+import Button from "../components/Button/Button";
 
 function Contact() {
   return (
     <Card className="absolute max-w-800 right-0 top-40 m-45 text-white p-20">
-      <h2>Contact me</h2>
-
       <Form />
     </Card>
   );
@@ -77,24 +79,24 @@ function Form({ onMessageSent, onMessageSentFailed }) {
           required
         />
 
-        <textarea
+        <Textarea
           className="bg-transparent border border-moonlight h-180 p-15 rounded"
           type="text"
           name="message"
           value={message}
           onChange={handleMessageChange}
-          placeholder="What do you need?"
+          placeholder="What do you have in mind?"
           minLength="2"
           maxLength="1000"
           required
         />
 
-        <button
+        <Button
           type="submit"
           className="flex justify-center text-32 text-moonlight border border-moonlight w-full rounded p-10 font-bold disabled:border-cloudy disabled:text-cloudy disabled:cursor-default"
           disabled={!isFormFilled}>
           {sending ? <SpinnerGap className="animate-spin" size={32} /> : "Send"}
-        </button>
+        </Button>
       </form>
     </>
   );
