@@ -15,7 +15,7 @@ function Nav({ className, ...props }) {
   return (
     <section className={`${className} `}>
       <nav className="py-20 px-45">
-        <ul className="flex gap-10 justify text-white justify-end text-blackberry">
+        <ul className="flex gap-15 justify text-white justify-end text-blackberry">
           <li
             className={`text-20 hover:text-white hover:opacity-50 ${
               active === PROJECTS && "text-white"
