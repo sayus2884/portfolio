@@ -17,8 +17,14 @@ const works = [
 function Home() {
   return (
     <Card className="absolute max-w-800 right-0 top-40 m-45">
-      {works.map(({ title, description, link, ytVideoId }) => (
-        <Project title={title} description={description} link={link} ytVideoId={ytVideoId} />
+      {works.map(({ title, description, link, ytVideoId }, i) => (
+        <Project
+          key={i}
+          title={title}
+          description={description}
+          link={link}
+          ytVideoId={ytVideoId}
+        />
       ))}
     </Card>
   );
