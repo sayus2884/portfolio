@@ -3,7 +3,7 @@ import { Sun, Rays, Earth, Moon } from "./Orbit.styles";
 function Orbit({
   children,
   sunSize = "100",
-  raySize = "250",
+  raySize = "150",
   earthSize = "400",
   moonSize = "100",
   moonOffset = "15",

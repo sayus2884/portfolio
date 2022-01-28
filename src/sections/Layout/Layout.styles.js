@@ -13,5 +13,5 @@ export const Main = styled.main`
 `;
 
 export const Background = styled.div`
-  clip-path: polygon(0 0, 30% 0, 84% 100%, 0% 100%);
+  clip-path: polygon(0 0, 40% 0, 70% 100%, 0% 100%);
 `;

@@ -50,8 +50,16 @@ module.exports = {
       },
       maxWidth: {
         735: "735px",
+        800: "800px",
         1320: "1320px",
       },
+
+      minHeight: {
+        youtube: "250px",
+        inherit: "inherit",
+        card_content: "350px",
+      },
+
       fontSize: {
         title: "64px",
         20: "20px",

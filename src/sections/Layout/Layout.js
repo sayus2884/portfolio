@@ -7,7 +7,7 @@ import Nav from "../Nav/Nav";
 
 function Layout({ children }) {
   return (
-    <div className="relative bg-chocolate overflow-hidden">
+    <div className="relative bg-chocolate">
       <Nav className="absolute top-0 inset-x-0 z-50" />
       <Main className="relative h-screen">
         <Background className="absolute inset-0 bg-chocolate"></Background>
