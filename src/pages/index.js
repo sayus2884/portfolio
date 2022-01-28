@@ -40,8 +40,8 @@ function Project({ ytVideoId, title, description, link }) {
             <h2 className="font-header tracking-widest text-32">{title}</h2>
 
             <div>
-              {description.map((text) => (
-                <p>{text}</p>
+              {description.map((text, i) => (
+                <p key={i}>{text}</p>
               ))}
             </div>
           </div>
