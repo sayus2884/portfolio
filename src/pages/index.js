@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import YTEmbedder from "../components/YTEmbedder/YTEmbedder";
+import Card from "../components/Card/Card";
 
 import Construction from "../sections/Construction/Construction";
 
@@ -15,11 +16,11 @@ const works = [
 
 function Home() {
   return (
-    <div className="absolute bg-blackberry max-w-800 w-full right-0 top-40 m-45">
+    <Card className="absolute max-w-800 right-0 top-40 m-45">
       {works.map(({ title, description, link, ytVideoId }) => (
         <Project title={title} description={description} link={link} ytVideoId={ytVideoId} />
       ))}
-    </div>
+    </Card>
   );
 }
 
@@ -39,9 +40,12 @@ function Project({ ytVideoId, title, description, link }) {
             </div>
           </div>
 
-          <button className="absolute bottom-0 right-0 border border-plum text-white p-10 rounded-sm">
-            This is a cool button
-          </button>
+          <a
+            href={link}
+            target="_blank"
+            className="absolute bottom-0 right-0 border border-plum text-plum px-15 py-10 rounded-sm">
+            Check it out
+          </a>
         </div>
       </div>
     </>
