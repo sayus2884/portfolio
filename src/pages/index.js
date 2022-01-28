@@ -31,7 +31,7 @@ function Project({ ytVideoId, title, description, link }) {
       <div className="relative min-h-card_content m-20">
         <div className="absolute inset-0">
           <div className="text-white inset-0 h-full pb-55">
-            <h2>{title}</h2>
+            <h2 className="font-header tracking-widest text-32">{title}</h2>
 
             <div>
               {description.map((text) => (

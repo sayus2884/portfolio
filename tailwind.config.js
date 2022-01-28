@@ -1,6 +1,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
+    fontFamily: {
+      header: ['"Good Times"'],
+      jura: ["Jura"],
+    },
+
     extend: {
       animation: {
         "spin-earth": "spin 80s linear infinite",
