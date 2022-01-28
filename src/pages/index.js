@@ -2,8 +2,7 @@ import Image from "next/image";
 
 import YTEmbedder from "../components/YTEmbedder/YTEmbedder";
 import Card from "../components/Card/Card";
-
-import Construction from "../sections/Construction/Construction";
+import Button from "../components/Button/Button";
 
 const works = [
   {
@@ -46,12 +45,11 @@ function Project({ ytVideoId, title, description, link }) {
             </div>
           </div>
 
-          <a
-            href={link}
-            target="_blank"
-            className="absolute bottom-0 right-0 border border-plum text-plum px-15 py-10 rounded-sm">
-            Check it out
-          </a>
+          <Button className="absolute bottom-0 right-0">
+            <a href={link} target="_blank">
+              Check it out
+            </a>
+          </Button>
         </div>
       </div>
     </>
