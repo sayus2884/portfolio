@@ -7,6 +7,7 @@ function YTEmbedder({ videoId, isResizing = false, isDragging = false, className
     frameBorder: "0",
     playerVars: {
       autoplay: 1,
+      mute: 1,
       modestbranding: 1,
       enablejsapi: 1,
     },
