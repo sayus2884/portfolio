@@ -10,9 +10,11 @@ import Button from "../components/Button/Button";
 
 function Contact() {
   return (
-    <Card className="absolute max-w-800 right-0 top-40 m-45 text-white p-20">
-      <Form />
-    </Card>
+    <div className="relative right-120">
+      <Card className="lg:min-w-lg_card p-20">
+        <Form />
+      </Card>
+    </div>
   );
 }
 

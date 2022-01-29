@@ -17,17 +17,19 @@ const works = [
 
 function Home() {
   return (
-    <Card className="absolute max-w-800 right-0 top-40">
-      {works.map(({ title, description, link, ytVideoId }, i) => (
-        <Project
-          key={i}
-          title={title}
-          description={description}
-          link={link}
-          ytVideoId={ytVideoId}
-        />
-      ))}
-    </Card>
+    <div className="relative right-120">
+      <Card className="lg:min-w-lg_card">
+        {works.map(({ title, description, link, ytVideoId }, i) => (
+          <Project
+            key={i}
+            title={title}
+            description={description}
+            link={link}
+            ytVideoId={ytVideoId}
+          />
+        ))}
+      </Card>
+    </div>
   );
 }
 

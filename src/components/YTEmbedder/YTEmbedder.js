@@ -16,7 +16,7 @@ function YTEmbedder({ videoId, isResizing = false, isDragging = false, className
   return (
     <YouTube
       className="min-h-inherit"
-      containerClassName={`${className} h-full w-full`}
+      containerClassName={`${className}`}
       opts={options}
       videoId={videoId}
       id={videoId}

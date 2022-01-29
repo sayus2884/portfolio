@@ -38,6 +38,8 @@ module.exports = {
         40: "40px",
         45: "45px",
         55: "55px",
+        60: "60px",
+        64: "64px",
         70: "70px",
         80: "80px",
         90: "90px",
@@ -53,10 +55,24 @@ module.exports = {
         360: "360px",
         420: "420px",
         500: "500px",
+        550: "550px",
         800: "800px",
       },
+      minWidth: {
+        lg_card: "550px",
+      },
+
       maxWidth: {
         orbit: "500px",
+        card: "550px",
+        735: "735px",
+        800: "800px",
+        1320: "1320px",
+      },
+
+      maxWidth: {
+        orbit: "500px",
+        card: "550px",
         735: "735px",
         800: "800px",
         1320: "1320px",
@@ -65,7 +81,7 @@ module.exports = {
       minHeight: {
         youtube: "250px",
         inherit: "inherit",
-        card_content: "350px",
+        card_content: "250px",
       },
 
       fontSize: {
