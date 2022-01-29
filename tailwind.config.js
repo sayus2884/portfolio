@@ -8,9 +8,9 @@ module.exports = {
 
     extend: {
       animation: {
-        "spin-earth": "spin 80s linear infinite",
-        "spin-moon": "spin 15s linear infinite",
-        "spin-rays": "spin 100s linear reverse infinite",
+        "spin-earth": "spin 100s linear infinite",
+        "spin-moon": "spin 30s linear infinite",
+        "spin-rays": "spin 120s linear reverse infinite",
       },
       backgroundImage: {
         "code-image": "url('/images/code.jpg')",
@@ -19,6 +19,7 @@ module.exports = {
         // Configure your color palette here
         chocolate: "#312B33",
         plum: "#E19783",
+        apple: "#D16D68",
         gum: "#D15362",
         blackberry: "#1B202F",
       },
@@ -66,6 +67,7 @@ module.exports = {
       },
 
       fontSize: {
+        version: "10px",
         title: "64px",
         20: "20px",
         22: "22px",

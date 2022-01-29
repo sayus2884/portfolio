@@ -11,29 +11,12 @@ function Orbit({
 }) {
   return (
     <div className={`${className}`}>
-      <div className="flex relative items-center justify-center">
-        <Sun sunSize={sunSize} className="absolute object-contain" src="/images/logo.svg" />
-        <Rays
-          raySize={raySize}
-          className="absolute animate-spin-rays object-contain"
-          src="/images/rays.svg"
-        />
-        <div className="absolute flex inset-0 items-center justify-center">
-          <div className="relative animate-spin-earth">
-            <Earth
-              earthSize={earthSize}
-              className="aspect-square object-contain"
-              src="/images/earth.svg"
-            />
-            <div className="absolute flex inset-0 items-center justify-center">
-              <Moon
-                moonSize={moonSize}
-                moonOffset={moonOffset}
-                className="absolute object-contain animate-spin-moon"
-                src="/images/moon.svg"
-              />
-            </div>
-          </div>
+      <div className="relative h-full flex flex-col items-center justify-center">
+        <Sun className="absolute" />
+        <Rays className="absolute animate-spin-rays" />
+        <div className="absolute h-full w-full flex flex-col items-center justify-center animate-spin-earth">
+          <Earth className="absolute" />
+          <Moon className="absolute animate-spin-moon" />
         </div>
       </div>
     </div>
