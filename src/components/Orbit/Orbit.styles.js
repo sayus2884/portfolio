@@ -15,7 +15,8 @@ import styled from "styled-components";
 // `;
 
 export const Sun = styled.div`
-  background: url("/images/logo.svg") no-repeat center;
+  background: url(${({ dark }) => (dark ? "/images/logo_dark.svg" : "/images/logo.svg")}) no-repeat
+    center;
   background-size: contain;
   width: 100%;
   height: 0;
@@ -23,7 +24,8 @@ export const Sun = styled.div`
 `;
 
 export const Rays = styled.div`
-  background: url("/images/rays.svg") no-repeat center;
+  background: url(${({ dark }) => (dark ? "/images/rays_dark.svg" : "/images/rays.svg")}) no-repeat
+    center;
   background-size: contain;
   width: 100%;
   height: 0;
@@ -31,7 +33,8 @@ export const Rays = styled.div`
 `;
 
 export const Earth = styled.div`
-  background: url("/images/earth.svg") no-repeat center;
+  background: url(${({ dark }) => (dark ? "/images/earth_dark.svg" : "/images/earth.svg")})
+    no-repeat center;
   background-size: contain;
   width: 100%;
   height: 0;
@@ -39,11 +42,12 @@ export const Earth = styled.div`
 `;
 
 export const Moon = styled.div`
-  background: url("/images/moon.svg") no-repeat center;
+  background: url(${({ dark }) => (dark ? "/images/moon_dark.svg" : "/images/moon.svg")}) no-repeat
+    center;
   background-size: contain;
   width: 15%;
   height: 0;
   padding-top: 20%;
-  bottom: 54px;
-  right: 78px;
+  bottom: 10%;
+  right: 15%;
 `;

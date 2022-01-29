@@ -24,6 +24,7 @@ module.exports = {
         blackberry: "#1B202F",
       },
       spacing: {
+        orbit: "500px",
         8: "8px",
         10: "10px",
         12: "12px",
@@ -55,6 +56,7 @@ module.exports = {
         800: "800px",
       },
       maxWidth: {
+        orbit: "500px",
         735: "735px",
         800: "800px",
         1320: "1320px",

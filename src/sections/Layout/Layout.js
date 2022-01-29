@@ -7,20 +7,21 @@ import Nav from "../Nav/Nav";
 
 function Layout({ children }) {
   return (
-    <div className="relative bg-chocolate font-jura">
+    <div className="bg-chocolate font-jura">
       <Nav className="absolute top-0 inset-x-0 z-50" />
-      <Main className="relative h-screen">
+      <Main className="absolute inset-0">
         <Background className="absolute inset-0 bg-chocolate"></Background>
         <div className="absolute inset-0 border mx-15 my-8 border-blackberry"></div>
         <div className="absolute inset-0 border mx-8 my-15 border-blackberry"></div>
 
-        <div className="absolute flex flex-col items-center text-plum">
-          <Orbit className="h-500 w-500" />
-          <div className="text-center text-apple -mt-35 z-50">
-            <h1 className="font-header text-28 tracking-wider">Jonacius Villamor</h1>
-            <p className="text-15 leading-none font-header"> Fullstack Web Developer</p>
-          </div>
+        <div className="fixed h-full w-full left-20 top-100">
+          <Orbit className="h-orbit w-500" dark />
         </div>
+        <Background className="fixed h-full w-full">
+          <div className="absolute left-20 top-100">
+            <Orbit className="h-orbit w-500" />
+          </div>
+        </Background>
 
         {children}
 
