@@ -21,8 +21,8 @@ function Layout({ children }) {
           </div>
         </Background>
 
-        <div className="absolute inset-0 mx-15 my-8 border-blackberry border-2"></div>
-        <div className="absolute inset-0 mx-8 my-15 border-blackberry border-2"></div>
+        <div className="absolute inset-0 mx-15 my-8 border-blackberry border-[3px]"></div>
+        <div className="absolute inset-0 mx-8 my-15 border-blackberry border-[3px]"></div>
 
         <div className="relative h-full flex justify-end pt-80 pb-50">{children}</div>
 

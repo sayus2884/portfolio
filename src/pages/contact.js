@@ -10,7 +10,7 @@ import Button from "../components/Button/Button";
 
 function Contact() {
   return (
-    <div className="relative right-120">
+    <div className="relative px-120">
       <Card className="lg:min-w-lg_card p-20">
         <Form />
       </Card>

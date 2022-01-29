@@ -6,7 +6,7 @@ import Button from "../components/Button/Button";
 
 function Home() {
   return (
-    <div className="relative right-120">
+    <div className="relative px-120">
       <Card className="flex flex-col gap-45 justify-center items-center p-55 lg:min-w-lg_card">
         <img src="/images/profile.png" className="h-200 rounded-full border-2 border-plum" />
 

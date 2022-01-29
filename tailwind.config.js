@@ -73,7 +73,7 @@ module.exports = {
       },
 
       minHeight: {
-        youtube: "250px",
+        youtube: "400px",
         inherit: "inherit",
         card_content: "340px",
       },

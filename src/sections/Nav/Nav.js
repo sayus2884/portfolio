@@ -13,9 +13,15 @@ function Nav({ className, ...props }) {
   }, [route]);
 
   return (
-    <section className={`${className} `}>
-      <nav className="py-20 px-45">
-        <ul className="flex gap-15 justify text-white justify-end text-blackberry">
+    <section className={`${className} flex flex-row py-20 px-45 justify-between items-center`}>
+      <div className="flex space-x-8 text-apple">
+        <h1 className="font-header">Jonacius Villamor</h1>
+        <span>|</span>
+        <p>Fullstack Web Developer</p>
+      </div>
+
+      <nav>
+        <ul className="flex gap-15 justify justify-end text-blackberry font-bold">
           <li
             className={`text-20 hover:text-white hover:opacity-50 ${
               active === PROJECTS && "text-white"
