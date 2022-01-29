@@ -5,9 +5,9 @@ function Project({ ytVideoId, title, description, link }) {
   return (
     <>
       {ytVideoId && <YTEmbedder videoId={ytVideoId} className="min-h-youtube" />}
-      <div className="relative min-h-card_content m-20">
-        <div className="absolute inset-0">
-          <div className="text-white inset-0 h-full pb-55">
+      <div className="relative min-h-card_content">
+        <div className="absolute inset-0 m-20">
+          <div className="text-white inset-0 h-full">
             <h2 className="font-header tracking-widest text-32">{title}</h2>
 
             <div>

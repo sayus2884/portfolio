@@ -58,7 +58,7 @@ function Form({ onMessageSent, onMessageSentFailed }) {
 
   return (
     <>
-      <h3 className="text-32 font-semibold mb-24">Get In Touch!</h3>
+      <h2 className="text-32 font-header tracking-widest mb-24">Get In Touch!</h2>
 
       <form className="flex flex-col gap-24" onSubmit={handleSubmit}>
         <Input

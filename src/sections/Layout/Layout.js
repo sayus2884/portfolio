@@ -24,7 +24,7 @@ function Layout({ children }) {
         <div className="absolute inset-0 mx-15 my-8 border-blackberry border-2"></div>
         <div className="absolute inset-0 mx-8 my-15 border-blackberry border-2"></div>
 
-        <div className="relative flex justify-end pt-80 pb-60">{children}</div>
+        <div className="relative h-full flex justify-end pt-80 pb-50">{children}</div>
 
         <p className="absolute bottom-20 left-22 text-plum text-version opacity-50">v 1.0.0</p>
       </Main>
