@@ -38,16 +38,16 @@ export const Earth = styled.div`
   background-size: contain;
   width: 100%;
   height: 0;
-  padding-top: 80%;
+  padding-top: 100%;
 `;
 
 export const Moon = styled.div`
   background: url(${({ dark }) => (dark ? "/images/moon_dark.svg" : "/images/moon.svg")}) no-repeat
     center;
   background-size: contain;
-  width: 15%;
+  width: 20%;
   height: 0;
   padding-top: 20%;
-  bottom: 10%;
-  right: 15%;
+  bottom: 3%;
+  right: 6%;
 `;

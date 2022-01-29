@@ -10,7 +10,7 @@ module.exports = {
       animation: {
         "spin-earth": "spin 100s linear infinite",
         "spin-moon": "spin 30s linear infinite",
-        "spin-rays": "spin 120s linear reverse infinite",
+        "spin-rays": "spin 900s linear reverse infinite",
       },
       backgroundImage: {
         "code-image": "url('/images/code.jpg')",
@@ -24,7 +24,7 @@ module.exports = {
         blackberry: "#1B202F",
       },
       spacing: {
-        orbit: "500px",
+        orbit: "1500px",
         8: "8px",
         10: "10px",
         12: "12px",
@@ -56,6 +56,7 @@ module.exports = {
         420: "420px",
         500: "500px",
         550: "550px",
+        600: "600px",
         800: "800px",
       },
       minWidth: {

@@ -12,16 +12,17 @@ function Layout({ children }) {
       <Main className="relative h-full min-h-screen">
         <Background className="absolute inset-0 bg-chocolate"></Background>
 
-        <div className="fixed h-full w-full left-20 top-100">
-          <Orbit className="h-orbit w-500" dark />
+        <div className="fixed h-full w-full -left-600 -top-140">
+          <Orbit className="h-orbit w-orbit" dark />
         </div>
         <Background className="fixed h-full w-full">
-          <div className="absolute left-20 top-100">
-            <Orbit className="h-orbit w-500" />
+          <div className="absolute -left-600 -top-140">
+            <Orbit className="h-orbit w-orbit" />
           </div>
         </Background>
-        <div className="absolute inset-0 border mx-15 my-8 border-blackberry"></div>
-        <div className="absolute inset-0 border mx-8 my-15 border-blackberry"></div>
+
+        <div className="absolute inset-0 mx-15 my-8 border-blackberry border-2"></div>
+        <div className="absolute inset-0 mx-8 my-15 border-blackberry border-2"></div>
 
         <div className="relative flex justify-end pt-80 pb-60">{children}</div>
 
