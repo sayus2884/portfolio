@@ -3,7 +3,7 @@ import YouTube from "react-youtube";
 function YTEmbedder({ videoId, isResizing = false, isDragging = false, className, ...props }) {
   const options = {
     height: "100%",
-    width: "100%",
+    width: "99.9%",
     frameBorder: "0",
     playerVars: {
       autoplay: 1,
