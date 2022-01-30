@@ -2,7 +2,7 @@ import { useState } from "react";
 import { isEmail } from "validator";
 import axios from "axios";
 import Image from "next/image";
-import { SpinnerGap } from "phosphor-react";
+import { PaperPlaneTilt, LinkBreak, SpinnerGap } from "phosphor-react";
 
 import Card from "../components/Card/Card";
 import Input from "../components/Input/Input";
@@ -10,10 +10,22 @@ import Textarea from "../components/Textarea/Textarea";
 import Button from "../components/Button/Button";
 
 function Contact() {
+  const [messageSent, setMessageSent] = useState(false);
+  const [messageSentFailed, setMessageSentFailed] = useState(false);
+
   return (
     <div className="relative px-120">
       <Card className="lg:min-w-lg_card pt-30 pb-55 px-45">
-        <Form />
+        {!messageSent && !messageSentFailed && (
+          <Form
+            onMessageSent={() => setMessageSent(true)}
+            onMessageSentFailed={() => setMessageSentFailed(true)}
+          />
+        )}
+
+        {messageSent && <SuccessPrompt />}
+
+        {messageSentFailed && <FailedPrompt />}
       </Card>
     </div>
   );
@@ -49,6 +61,7 @@ function Form({ onMessageSent, onMessageSentFailed }) {
         message,
       })
       .then((res) => {
+        console.log(res);
         if (res) {
           onMessageSent();
         }
@@ -102,6 +115,30 @@ function Form({ onMessageSent, onMessageSentFailed }) {
         </Button>
       </form>
     </>
+  );
+}
+
+function SuccessPrompt() {
+  return (
+    <div className="flex flex-col items-center gap-24 text-center">
+      <PaperPlaneTilt size={80} />
+      <h2 className="text-36">Message Sent!</h2>
+      <p className="text-22">Thanks for contacting me. I'll be sure respond as soon as I can!</p>
+    </div>
+  );
+}
+
+function FailedPrompt() {
+  return (
+    <div className="flex flex-col items-center gap-24 text-center">
+      <LinkBreak size={80} />
+      <h2 className="text-36">Message was not sent... :(</h2>
+      <p className="text-22">
+        Sorry. It appears I have reached the maximum amount of emails that my email provider can
+        handle. But you can still send me an email at{" "}
+        <span className="underline text-moonlight">contact@jonacius-villamor.com</span>. Cheers!
+      </p>
+    </div>
   );
 }
 

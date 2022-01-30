@@ -1,7 +1,11 @@
 import nodemailer from "nodemailer";
 import { POST } from "../../utils/methods";
 
-const post = (req, res) => {
+export default function handler(req, res) {
+  if (req.method !== POST) {
+    res.status(404).json({ message: "API route not found." });
+  }
+
   const { name, email, message } = req.body;
 
   let transporter = nodemailer.createTransport({
@@ -15,28 +19,19 @@ const post = (req, res) => {
   });
 
   // send mail with defined transport object
-  let send = transporter.sendMail({
-    from: "Portfolio <info@jonacius-villamor.com>",
-    to: "contact@jonacius-villamor.com",
-    subject: `[Contact] A Message from ${name}`,
-    text: message,
-    html: `<p>${message}</p>`,
-  });
+  transporter
+    .sendMail({
+      from: "Portfolio <info@jonacius-villamor.com>",
+      to: "contact@jonacius-villamor.com",
+      subject: `[Contact] A Message from ${name}`,
+      text: message,
+      html: `<p>${message}</p>`,
+    })
 
-  send
     .then((result) => {
-      res.status(200);
+      res.status(200).end();
     })
     .catch((err) => {
-      res.status(500);
+      res.status(500).end();
     });
-};
-
-export default function handler(req, res) {
-  if (req.method === POST) {
-    // NOTE: Not yet integrated in prod, needs middleware to prevent DDOS.
-    return post(req, res);
-  }
-
-  res.status(404).json({ message: "API route not found." });
 }
