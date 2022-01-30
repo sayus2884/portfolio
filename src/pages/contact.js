@@ -2,6 +2,7 @@ import { useState } from "react";
 import { isEmail } from "validator";
 import axios from "axios";
 import Image from "next/image";
+import { SpinnerGap } from "phosphor-react";
 
 import Card from "../components/Card/Card";
 import Input from "../components/Input/Input";
@@ -11,7 +12,7 @@ import Button from "../components/Button/Button";
 function Contact() {
   return (
     <div className="relative px-120">
-      <Card className="lg:min-w-lg_card p-20">
+      <Card className="lg:min-w-lg_card pt-30 pb-55 px-45">
         <Form />
       </Card>
     </div>
@@ -95,7 +96,7 @@ function Form({ onMessageSent, onMessageSentFailed }) {
 
         <Button
           type="submit"
-          className="flex justify-center text-32 text-moonlight border border-moonlight w-full rounded p-10 font-bold disabled:border-cloudy disabled:text-cloudy disabled:cursor-default"
+          className="flex justify-center text-24 text-moonlight border border-moonlight w-full rounded p-10 disabled:border-cloudy disabled:text-cloudy disabled:cursor-default"
           disabled={!isFormFilled}>
           {sending ? <SpinnerGap className="animate-spin" size={32} /> : "Send"}
         </Button>

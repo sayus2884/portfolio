@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 
-import { Main, Background } from "./Layout.styles";
+import { Main, Background, Overlay } from "./Layout.styles";
 
 import Orbit from "../../components/Orbit/Orbit";
 import Nav from "../Nav/Nav";
@@ -12,11 +12,11 @@ function Layout({ children }) {
       <Main className="relative h-full min-h-screen">
         <Background className="absolute inset-0 bg-chocolate"></Background>
 
-        <div className="fixed h-full w-full -left-600 -top-140">
+        <div className="fixed h-full w-full -left-[600px] -top-[140px]">
           <Orbit className="h-orbit w-orbit" dark />
         </div>
         <Background className="fixed h-full w-full">
-          <div className="absolute -left-600 -top-140">
+          <div className="absolute -left-[600px] -top-[140px]">
             <Orbit className="h-orbit w-orbit" />
           </div>
         </Background>
@@ -26,7 +26,9 @@ function Layout({ children }) {
 
         <div className="relative h-full flex justify-end pt-80 pb-50">{children}</div>
 
-        <p className="absolute bottom-20 left-22 text-plum text-version opacity-50">v 1.0.0</p>
+        <p className="absolute bottom-20 right-[24px] text-chocolate text-version font-bold">
+          v 1.0.0
+        </p>
       </Main>
     </div>
   );
