@@ -123,7 +123,9 @@ function SuccessPrompt() {
     <div className="flex flex-col items-center gap-24 text-center">
       <PaperPlaneTilt size={80} />
       <h2 className="text-36">Message Sent!</h2>
-      <p className="text-22">Thanks for contacting me. I'll be sure respond as soon as I can!</p>
+      <p className="text-22">
+        Thanks for contacting me. I&apos;ll be sure respond as soon as I can!
+      </p>
     </div>
   );
 }
