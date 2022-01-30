@@ -12,7 +12,7 @@ function Home() {
 
         <p className="text-18 text-center px-55">
           I am but a simple man. I enjoy drawing and watching Hololive EN. I can be obliviously
-          blunt and I don't really talk much about myself but I do enjoy talking about the
+          blunt and I don&apos;t really talk much about myself but I do enjoy talking about the
           possibility of things. What I want to do is to create useful things to make myself and
           everyone else happy and satisfied.
         </p>
