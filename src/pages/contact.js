@@ -109,7 +109,7 @@ function Form({ onMessageSent, onMessageSentFailed }) {
 
         <Button
           type="submit"
-          className="flex justify-center text-24 text-moonlight border border-moonlight w-full rounded p-10 disabled:border-cloudy disabled:text-cloudy disabled:cursor-default"
+          className="flex justify-center text-24 text-moonlight border border-moonlight w-full rounded p-10 disabled:opacity-50 disabled:cursor-default"
           disabled={!isFormFilled}>
           {sending ? <SpinnerGap className="animate-spin" size={32} /> : "Send"}
         </Button>
