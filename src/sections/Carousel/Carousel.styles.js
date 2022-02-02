@@ -3,12 +3,11 @@ import { Swiper } from "swiper/react";
 
 export const CustomSwiper = styled(Swiper)`
   margin: 0;
+  --nav-offset: 80px;
 
   & > .swiper-wrapper {
-    padding: 80px 0;
     box-sizing: border-box;
-    left: 30%;
-    right: 0;
+    padding-top: 80px;
   }
 
   & > .swiper-pagination {

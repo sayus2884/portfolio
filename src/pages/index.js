@@ -12,10 +12,16 @@ import Contact from "../sections/Contact/Contact";
 
 function Home() {
   return (
-    <Carousel className="pt-80 pb-50 h-screen mr-0 w-full">
-      <Works className="lg:pr-[30%]" />
-      <About className="lg:pr-[30%]"> stuff here</About>
-      <Contact className="lg:pr-[30%]"> stuff here</Contact>
+    <Carousel className="pt-80 h-screen mr-0 w-full">
+      <Works className="max-w-[1050px] w-full h-full bg-blackberry rounded-tl-lg pt-20 pb-30" />
+      <About className="max-w-[1050px] w-full h-full bg-blackberry rounded-tl-lg pt-20 pb-30">
+        {" "}
+        stuff here
+      </About>
+      <Contact className="max-w-[1050px] w-full h-full bg-blackberry rounded-tl-lg pt-20 pb-30">
+        {" "}
+        stuff here
+      </Contact>
     </Carousel>
   );
 }

@@ -40,7 +40,7 @@ const works = [
 function Carousel({ children, className, ...props }) {
   return (
     <div className={className}>
-      <div className="flex flex-col gap-30 pt-20 pb-30 px-45">
+      <div className="flex flex-col gap-30 px-45 h-full">
         <CarouselVideos
           spaceBetween={30}
           centeredSlides={true}

@@ -5,7 +5,7 @@ import Button from "../../components/Button/Button";
 function About({ children, className, ...props }) {
   return (
     <div className={className}>
-      <div className="flex flex-col gap-30 justify-center items-center pt-20 pb-30 px-45">
+      <div className="relative flex flex-col gap-30 items-center px-45 h-full overflow-auto">
         <img src="/images/profile.png" className="h-200 rounded-full border-2 border-plum" />
 
         <p className="text-18 text-center px-55">
