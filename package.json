@@ -21,6 +21,7 @@
     "react-youtube": "^7.14.0",
     "styled-components": "^5.3.3",
     "styled-normalize": "^8.0.7",
+    "swiper": "^8.0.0",
     "validator": "^13.7.0"
   },
   "devDependencies": {

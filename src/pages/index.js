@@ -23,7 +23,7 @@ const works = [
 
 function Home() {
   return (
-    <div className="relative px-120">
+    <div className="relative ">
       <Card className="lg:min-w-lg_card">
         {works.map(({ title, description, link, ytVideoId }, i) => (
           <Project
