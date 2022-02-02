@@ -6,10 +6,10 @@ function Project({ title, description, link, technologies }) {
     <>
       <div className="flex flex-col gap-25">
         <div className="flex justify-between">
-          <h2 className="flex items-center gap-10 font-header tracking-widest text-32">
-            {title}{" "}
-            <span className="font-jura tracking-normal text-base">| {technologies.join(", ")}</span>
-          </h2>
+          <div>
+            <h2 className="font-header tracking-widest text-32">{title} </h2>
+            <p>Made with {technologies.join(", ")}</p>
+          </div>
 
           <Button className="w-fit self-end">
             <a href={link} target="_blank">

@@ -8,7 +8,6 @@ function Carousel({ children, className, ...props }) {
   return (
     <CustomSwiper
       className={className}
-      preventInteractionOnTransition={true}
       touchEventsTarget={"container"}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
