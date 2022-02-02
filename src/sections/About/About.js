@@ -1,8 +1,4 @@
-import { Children, useState, useEffect, useContext } from "react";
 import Link from "next/link";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination, Navigation } from "swiper";
 
 import Button from "../../components/Button/Button";
 
