@@ -4,7 +4,9 @@ import YTEmbedder from "../components/YTEmbedder/YTEmbedder";
 import Card from "../components/Card/Card";
 import Button from "../components/Button/Button";
 
+import Carousel from "../sections/Carousel/Carousel";
 import Project from "../sections/Project/Project";
+import Works from "../sections/Works/Works";
 
 const works = [
   {
@@ -23,19 +25,11 @@ const works = [
 
 function Home() {
   return (
-    <div className="relative ">
-      <Card className="lg:min-w-lg_card">
-        {works.map(({ title, description, link, ytVideoId }, i) => (
-          <Project
-            key={i}
-            title={title}
-            description={description}
-            link={link}
-            ytVideoId={ytVideoId}
-          />
-        ))}
-      </Card>
-    </div>
+    <Carousel className="pt-80 pb-50 h-screen mr-0 w-full">
+      <Works className="lg:pr-[30%]" />
+      <div className="p-50"> stuff here</div>
+      <div className="p-50"> stuff here</div>
+    </Carousel>
   );
 }
 

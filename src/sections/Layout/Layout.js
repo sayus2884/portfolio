@@ -10,7 +10,7 @@ function Layout({ children }) {
   return (
     <div className="bg-chocolate font-jura text-white">
       <Main className="relative h-full min-h-screen">
-        <Background className="absolute inset-0 bg-chocolate"></Background>
+        <Nav className="fixed w-full" />
 
         <div className="fixed h-full w-full -left-[600px] -top-[140px]">
           <Orbit className="h-orbit w-orbit" dark />
@@ -21,13 +21,7 @@ function Layout({ children }) {
           </div>
         </Background>
 
-        <div className="flex justify-end">
-          <Carousel className="pt-80 pb-50 h-screen mr-0 w-full">
-            <div className="p-50"> stuff here</div>
-            <div className="p-50"> stuff here</div>
-            <div className="p-50"> stuff here</div>
-          </Carousel>
-        </div>
+        <div className="flex justify-end">{children}</div>
 
         <p className="absolute bottom-20 right-[24px] text-chocolate text-version font-bold">
           v 1.1.0

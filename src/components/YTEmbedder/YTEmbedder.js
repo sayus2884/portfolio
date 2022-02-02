@@ -3,10 +3,9 @@ import YouTube from "react-youtube";
 function YTEmbedder({ videoId, isResizing = false, isDragging = false, className, ...props }) {
   const options = {
     height: "100%",
-    width: "99.9%",
+    width: "50%",
     frameBorder: "0",
     playerVars: {
-      autoplay: 1,
       mute: 1,
       modestbranding: 1,
       enablejsapi: 1,
@@ -15,7 +14,7 @@ function YTEmbedder({ videoId, isResizing = false, isDragging = false, className
 
   return (
     <YouTube
-      className="min-h-inherit rounded-t"
+      className="min-h-inherit"
       containerClassName={`${className}`}
       opts={options}
       videoId={videoId}

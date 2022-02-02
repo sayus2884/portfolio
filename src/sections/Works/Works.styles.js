@@ -4,14 +4,14 @@ import { Swiper } from "swiper/react";
 export const CustomSwiper = styled(Swiper)`
   margin: 0;
 
-  & > .swiper-wrapper {
+  & .swiper-wrapper {
     padding: 80px 0;
     box-sizing: border-box;
     left: 30%;
     right: 0;
   }
 
-  & > .swiper-pagination {
+  & .swiper-pagination {
     --pagination-width: 25px;
     width: var(--pagination-width);
     left: calc(100% - var(--pagination-width));
