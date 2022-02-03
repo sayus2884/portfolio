@@ -12,7 +12,7 @@ function Dropdown(
   },
   ref,
 ) {
-  const containerRef = ref || useRef();
+  const containerRef = ref ? ref : useRef();
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(defaultOption);
 
