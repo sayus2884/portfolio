@@ -9,10 +9,11 @@ function About({ children, className, ...props }) {
         <img src="/images/profile.png" className="h-200 rounded-full border-2 border-plum" />
 
         <p className="text-18 text-center px-55">
-          I am but a simple man. I enjoy drawing and watching Hololive EN. I can be obliviously
-          blunt and I don&apos;t really talk much about myself but I do enjoy talking about the
-          possibility of things. What I want to do is to create useful things to make myself and
-          everyone else happy and satisfied.
+          I am a fullstack developer based in British Columbia, Canada. I like to build web apps
+          which are very useful and convenient. I do enjoy drawing which taught me some pretty
+          useful design and user experience techniques that I incorporate into my projects. I love
+          to listen and talk about ideas and possibility of things, hence why I like to watch VTuber
+          streamers, documentaries, and great storytelling shows and movies.
         </p>
 
         <Button>
