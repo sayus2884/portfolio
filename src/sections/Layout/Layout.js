@@ -10,8 +10,6 @@ function Layout({ children }) {
   return (
     <div className="bg-chocolate font-jura text-white">
       <Main className="relative h-full min-h-screen">
-        <Nav className="fixed w-full" />
-
         <div className="fixed h-full w-full -left-[600px] -top-[140px]">
           <Orbit className="h-orbit w-orbit" dark />
         </div>
