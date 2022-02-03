@@ -1,4 +1,4 @@
-import { Children, useState, useEffect, useContext } from "react";
+import { Children } from "react";
 
 import { SwiperSlide } from "swiper/react";
 import { CustomSwiper } from "./CarouselVideos.styles";

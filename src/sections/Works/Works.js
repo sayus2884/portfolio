@@ -8,16 +8,27 @@ import CarouselVideos from "../CarouselVideos/CarouselVideos";
 
 import YTEmbedder from "../../components/YTEmbedder/YTEmbedder";
 
+import NavigationContext from "../../contexts/NavigationContext";
+
 import works from "../../utils/works";
 
 function Carousel({ children, className, ...props }) {
   const [currentWork, setCurrentWork] = useState(works[0]);
   const [currentPlayer, setCurrenPlayer] = useState();
+  const { current } = useContext(NavigationContext);
   const youtubeRefArr = [];
 
   works.forEach((work, i) => {
     youtubeRefArr[i] = useRef();
   });
+
+  useEffect(() => {
+    if (current !== 0) {
+      currentPlayer.stopVideo();
+    } else {
+      currentPlayer.playVideo();
+    }
+  }, [current]);
 
   return (
     <div className={className}>
