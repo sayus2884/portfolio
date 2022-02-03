@@ -31,7 +31,7 @@ function Nav({ className, ...props }) {
 
   return (
     <section className={`${className} flex flex-row py-20 px-30 justify-between items-center`}>
-      <div className="flex space-x-8 text-apple">
+      <div className="flex space-x-8 text-chocolate">
         <h1 className="font-header">Jonacius Villamor</h1>
         <span>|</span>
         <p>Fullstack Web Developer</p>

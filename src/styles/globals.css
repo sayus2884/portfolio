@@ -10,3 +10,27 @@ html {
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
+
+*::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 9999px;
+  padding: 10px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #312b33;
+  border-radius: 9999px;
+}
+
+*:hover::-webkit-scrollbar-thumb {
+  background: #5c5c5c;
+}
+
+.branding-img-container {
+  opacity: 0;
+}

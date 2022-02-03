@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, forwardRef, useRef, useEffect } from "react";
 import { isEmail } from "validator";
 import Link from "next/link";
 import axios from "axios";
@@ -8,21 +8,23 @@ import Input from "../../components/Input/Input";
 import Textarea from "../../components/Textarea/Textarea";
 import Button from "../../components/Button/Button";
 
-function About({ children, className, ...props }) {
+function Contact({ children, className, ...props }) {
   const [messageSent, setMessageSent] = useState(false);
   const [messageSentFailed, setMessageSentFailed] = useState(false);
+  const nameRef = useRef();
 
   return (
     <div className={className}>
       <div className="relative flex flex-col gap-30 items-center px-45 h-full overflow-auto">
         {!messageSent && !messageSentFailed && (
           <Form
+            ref={nameRef}
             onMessageSent={() => setMessageSent(true)}
             onMessageSentFailed={() => setMessageSentFailed(true)}
           />
         )}
 
-        {messageSent && <SuccessPrompt />}
+        {messageSent && <SuccessPrompt sender={nameRef.current} />}
 
         {messageSentFailed && <FailedPrompt />}
       </div>
@@ -30,7 +32,7 @@ function About({ children, className, ...props }) {
   );
 }
 
-function Form({ onMessageSent, onMessageSentFailed }) {
+const Form = forwardRef(({ onMessageSent, onMessageSentFailed }, ref) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -60,39 +62,48 @@ function Form({ onMessageSent, onMessageSentFailed }) {
         message,
       })
       .then((res) => {
-        console.log(res);
         if (res) {
           onMessageSent();
         }
       })
-      .catch((err) => onMessageSentFailed())
-      .finally(() => setSending(false));
+      .catch((err) => onMessageSentFailed());
   };
+
+  useEffect(() => {
+    console.log(name);
+    ref.current = name;
+  }, [name]);
+
+  useEffect(() => {
+    return setSending(false);
+  }, [onMessageSent]);
 
   return (
     <>
-      <h2 className="text-32 font-header tracking-widest mb-24">Get In Touch!</h2>
+      <h2 className="text-32 font-header tracking-widest w-full">Get In Touch!</h2>
 
-      <form className="flex flex-col gap-24" onSubmit={handleSubmit}>
-        <Input
-          className="bg-transparent border border-moonlight p-15 rounded"
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          onChange={handleNameChange}
-          value={name}
-          required
-        />
+      <form className="flex flex-col gap-24 w-full" onSubmit={handleSubmit}>
+        <div className="grid grid-cols-2 gap-8">
+          <Input
+            className="bg-transparent border border-moonlight p-15 rounded"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            onChange={handleNameChange}
+            value={name}
+            required
+          />
 
-        <Input
-          className="bg-transparent border border-moonlight p-15 rounded"
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          onChange={handleEmailChange}
-          value={email}
-          required
-        />
+          <Input
+            className="bg-transparent border border-moonlight p-15 rounded"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            onChange={handleEmailChange}
+            value={email}
+            required
+          />
+        </div>
 
         <Textarea
           className="bg-transparent border border-moonlight h-180 p-15 rounded"
@@ -115,15 +126,17 @@ function Form({ onMessageSent, onMessageSentFailed }) {
       </form>
     </>
   );
-}
+});
 
-function SuccessPrompt() {
+function SuccessPrompt({ sender = "test" }) {
   return (
-    <div className="flex flex-col items-center gap-24 text-center">
+    <div className="flex flex-col items-center gap-24 text-center justify-center h-4/5">
       <PaperPlaneTilt size={80} />
       <h2 className="text-36">Message Sent!</h2>
       <p className="text-22">
-        Thanks for contacting me. I&apos;ll be sure respond as soon as I can!
+        Thanks for contacting me,{" "}
+        <span className="font-bold text-plum">{sender.split(" ")[0]}</span>. I&apos;ll be sure
+        respond as soon as I can!
       </p>
     </div>
   );
@@ -131,7 +144,7 @@ function SuccessPrompt() {
 
 function FailedPrompt() {
   return (
-    <div className="flex flex-col items-center gap-24 text-center">
+    <div className="flex flex-col items-center gap-24 text-center justify-center h-4/5">
       <LinkBreak size={80} />
       <h2 className="text-36">Message was not sent... :(</h2>
       <p className="text-22">
@@ -143,4 +156,4 @@ function FailedPrompt() {
   );
 }
 
-export default About;
+export default Contact;

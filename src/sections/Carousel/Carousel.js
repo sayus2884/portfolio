@@ -26,7 +26,6 @@ function Carousel({ children, className, ...props }) {
       touchEventsTarget={"container"}
       onSlideChange={({ activeIndex }) => navigateTo(activeIndex)}
       mousewheel={true}
-      spaceBetween={550}
       pagination={{
         type: "bullets",
         clickable: true,

@@ -55,13 +55,17 @@ function Carousel({ children, className, ...props }) {
           {works.map(({ ytVideoId }, i) => {
             return (
               ytVideoId && (
-                <YTEmbedder videoId={ytVideoId} className="min-h-[200px] flex justify-center" />
+                <YTEmbedder
+                  key={i}
+                  videoId={ytVideoId}
+                  className="min-h-[200px] flex justify-center"
+                />
               )
             );
           })}
         </CarouselVideos>
 
-        <div className="max-h-[350px] overflow-auto pr-50">
+        <div className="overflow-auto pr-50">
           <Project
             title={works[0].title}
             description={works[0].description}
