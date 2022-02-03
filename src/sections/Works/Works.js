@@ -23,6 +23,10 @@ function Carousel({ children, className, ...props }) {
   });
 
   useEffect(() => {
+    if (!currentPlayer) {
+      return;
+    }
+
     if (current !== 0) {
       currentPlayer.stopVideo();
     } else {
