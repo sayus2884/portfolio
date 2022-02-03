@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef, forwardRef } from "react";
+import { useState, useEffect, useCallback, forwardRef } from "react";
 import { CaretLeft } from "phosphor-react";
 
 function Dropdown(
@@ -12,7 +12,7 @@ function Dropdown(
   },
   ref,
 ) {
-  const containerRef = ref ? ref : useRef();
+  const containerRef = ref;
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(defaultOption);
 
