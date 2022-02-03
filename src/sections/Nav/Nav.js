@@ -6,7 +6,7 @@ import Dropdown from "../../components/Dropdown/Dropdown";
 
 import NavigationContext from "../../contexts/NavigationContext";
 
-const [PROJECTS, ABOUT, CONTACT] = ["/", "/about", "/contact"];
+const [PROJECTS, ABOUT, CONTACT] = [0, 1, 2];
 
 function Nav({ className, ...props }) {
   const dropdownNav = useRef();
@@ -15,18 +15,20 @@ function Nav({ className, ...props }) {
 
   const [active, setActive] = useState(PROJECTS);
   const options = [
-    { name: "Projects", value: 0 },
-    { name: "About", value: 1 },
-    { name: "Contact", value: 2 },
+    { name: "Projects", value: PROJECTS },
+    { name: "About", value: ABOUT },
+    { name: "Contact", value: CONTACT },
   ];
 
   const handleItemSelected = (item) => {
     navigateTo(item.value);
+    setActive(item.value);
   };
 
   useEffect(() => {
     const selectedOption = options.find(({ value }) => value === current);
     dropdownNav.current.dropdown.setSelectedItem(selectedOption);
+    setActive(selectedOption.value);
   }, [current]);
 
   return (
@@ -40,11 +42,34 @@ function Nav({ className, ...props }) {
       <nav>
         <Dropdown
           ref={dropdownNav}
-          className={"text-chocolate min-w-[120px]"}
+          className={"text-chocolate min-w-[120px] md:hidden"}
           options={options}
           onItemSelected={handleItemSelected}
-          defaultOption={options[0]}
+          defaultOption={options[PROJECTS]}
         />
+
+        <div className="hidden md:block lg:pr-20">
+          <ul className="flex gap-15 justify justify-end text-blackberry font-bold">
+            <li
+              className={`text-20 hover:text-white hover:opacity-50 ${
+                active === PROJECTS && "text-white"
+              }`}>
+              <button onClick={() => handleItemSelected(options[PROJECTS])}>Projects</button>
+            </li>
+            <li
+              className={`text-20 hover:text-white hover:opacity-50 ${
+                active === ABOUT && "text-white"
+              }`}>
+              <button onClick={() => handleItemSelected(options[ABOUT])}>About</button>
+            </li>
+            <li
+              className={`text-20 hover:text-white hover:opacity-50 ${
+                active === CONTACT && "text-white"
+              }`}>
+              <button onClick={() => handleItemSelected(options[CONTACT])}>Contact</button>
+            </li>
+          </ul>
+        </div>
       </nav>
     </section>
   );
