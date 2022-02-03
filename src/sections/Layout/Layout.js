@@ -21,7 +21,7 @@ function Layout({ children }) {
 
         <div className="flex justify-end">{children}</div>
 
-        <p className="absolute bottom-20 right-[24px] text-chocolate text-version font-bold">
+        <p className="absolute bottom-10 right-[30px] text-plum text-version_size font-bold opacity-50">
           v 1.1.0
         </p>
       </Main>

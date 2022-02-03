@@ -78,7 +78,7 @@ module.exports = {
       },
 
       fontSize: {
-        version: "10px",
+        version_size: "10px",
         title: "64px",
         18: "18px",
         20: "20px",
