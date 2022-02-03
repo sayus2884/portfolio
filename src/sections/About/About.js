@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import Link from "next/link";
 
 import Button from "../../components/Button/Button";
 
+import NavigationContext from "../../contexts/NavigationContext";
+
 function About({ children, className, ...props }) {
+  const { navigateTo } = useContext(NavigationContext);
+
   return (
     <div className={className}>
       <div className="relative flex flex-col gap-30 items-center px-45 h-full overflow-auto">
@@ -16,9 +21,7 @@ function About({ children, className, ...props }) {
           streamers, documentaries, and great storytelling shows and movies.
         </p>
 
-        <Button>
-          <Link href="/contact">Get in touch</Link>
-        </Button>
+        <Button onClick={() => navigateTo(2)}>Get in touch</Button>
       </div>
     </div>
   );
