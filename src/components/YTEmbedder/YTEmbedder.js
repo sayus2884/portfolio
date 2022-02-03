@@ -1,13 +1,19 @@
+import { forwardRef } from "react";
 import YouTube from "react-youtube";
 
-function YTEmbedder({
-  videoId,
-  isResizing = false,
-  isDragging = false,
-  className,
-  containerClassName,
-  ...props
-}) {
+function YTEmbedder(
+  {
+    videoId,
+    isResizing = false,
+    isDragging = false,
+    className,
+    containerClassName,
+    index,
+    onReady,
+    ...props
+  },
+  ref,
+) {
   const options = {
     height: "100%",
     width: "100%",
@@ -21,6 +27,7 @@ function YTEmbedder({
 
   return (
     <YouTube
+      onReady={onReady}
       className={`${className} min-h-inherit rounded-sm`}
       containerClassName={`${containerClassName}`}
       opts={options}
@@ -30,4 +37,4 @@ function YTEmbedder({
   );
 }
 
-export default YTEmbedder;
+export default forwardRef(YTEmbedder);

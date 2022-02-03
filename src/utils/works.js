@@ -19,7 +19,7 @@ const works = [
       "My online portfolio to showcase what I can do and what I have made. The design is inspired by the business card layout in a single page application setting to allow for interesting interactivity. The web app is built with NextJS, TailwindCSS, and Swipe; and is prototyped using Framer. The code is available on github for viewing.",
     ],
     link: "https://github.com/sayus2884/portfolio",
-    ytVideoId: "UGEsZHTuJsE",
+    ytVideoId: "B6jGX3fT_fU",
   },
 ];
 

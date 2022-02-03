@@ -44,6 +44,7 @@ export const CustomSwiper = styled(Swiper)`
     border-radius: 50%;
     background: white;
     opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.3);
+    cursor: pointer;
   }
 
   .custom-swiper-pagination-bullet-active {

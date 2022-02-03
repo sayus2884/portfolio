@@ -9,6 +9,10 @@ export const CustomSwiper = styled(Swiper)`
     right: 0;
   }
 
+  & > .swiper-pagination {
+    pointer-events: none;
+  }
+
   .custom-video-swiper-pagination-bullet {
     width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
     height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
@@ -17,6 +21,8 @@ export const CustomSwiper = styled(Swiper)`
     background: white;
     opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.3);
     margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
+    cursor: pointer;
+    pointer-events: auto;
   }
 
   .custom-video-swiper-pagination-bullet-active {

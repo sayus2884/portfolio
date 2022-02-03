@@ -1,4 +1,4 @@
-import { Children, useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination, Navigation } from "swiper";
@@ -12,6 +12,12 @@ import works from "../../utils/works";
 
 function Carousel({ children, className, ...props }) {
   const [currentWork, setCurrentWork] = useState(works[0]);
+  const [currentPlayer, setCurrenPlayer] = useState();
+  const youtubeRefArr = [];
+
+  works.forEach((work, i) => {
+    youtubeRefArr[i] = useRef();
+  });
 
   return (
     <div className={className}>
@@ -19,15 +25,34 @@ function Carousel({ children, className, ...props }) {
         <CarouselVideos
           spaceBetween={30}
           centeredSlides={true}
-          onSlideChange={({ realIndex }) => setCurrentWork(works[realIndex])}
-          loop={true}
+          onSlideChange={({ realIndex }) => {
+            if (currentPlayer) {
+              setCurrentWork(works[realIndex]);
+              currentPlayer.stopVideo();
+
+              const newCurrentPlayer = youtubeRefArr[realIndex].current;
+              newCurrentPlayer.playVideo();
+              setCurrenPlayer(newCurrentPlayer);
+            }
+          }}
           navigation={true}
           modules={[Pagination, Navigation]}>
           {works.map(({ ytVideoId }, i) => {
             return (
               ytVideoId && (
                 <YTEmbedder
+                  ref={youtubeRefArr[i]}
+                  onReady={(event) => {
+                    const player = event.target;
+                    if (i === 0) {
+                      player.playVideo();
+                      setCurrenPlayer(player);
+                    }
+
+                    youtubeRefArr[i].current = player;
+                  }}
                   key={i}
+                  index={i}
                   videoId={ytVideoId}
                   className="max-w-[70%]"
                   containerClassName="lg:min-h-[250px] flex justify-center"
