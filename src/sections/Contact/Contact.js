@@ -70,7 +70,6 @@ const Form = forwardRef(({ onMessageSent, onMessageSentFailed }, ref) => {
   };
 
   useEffect(() => {
-    console.log(name);
     ref.current = name;
   }, [name]);
 

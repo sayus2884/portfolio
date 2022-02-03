@@ -29,6 +29,11 @@ function Carousel({ children, className, ...props }) {
       pagination={{
         type: "bullets",
         clickable: true,
+        bulletClass: "custom-swiper-pagination-bullet",
+        bulletActiveClass: "custom-swiper-pagination-bullet-active",
+        renderBullet: function (index, className) {
+          return `<span class="dot  custom-swiper-pagination-bullet"></span>`;
+        },
       }}
       modules={[Mousewheel, Pagination]}
       {...props}>

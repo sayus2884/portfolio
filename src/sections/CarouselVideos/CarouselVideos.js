@@ -9,13 +9,16 @@ function CarouselVideos({ children, className, ...props }) {
     <CustomSwiper
       className={className}
       slidesPerView={"auto"}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
       mousewheel={true}
       spaceBetween={550}
       pagination={{
         type: "bullets",
         clickable: true,
+        bulletClass: "custom-video-swiper-pagination-bullet",
+        bulletActiveClass: "custom-video-swiper-pagination-bullet-active",
+        renderBullet: function (index, className) {
+          return `<span class="custom-video-swiper-pagination-bullet"></span>`;
+        },
       }}
       modules={[Mousewheel, Pagination]}
       {...props}>
