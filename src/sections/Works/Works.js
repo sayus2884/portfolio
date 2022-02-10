@@ -82,6 +82,7 @@ function Carousel({ children, className, ...props }) {
             title={currentWork.title}
             description={currentWork.description}
             link={currentWork.link}
+            github={currentWork.github}
             technologies={currentWork.technologies}
           />
         </div>
