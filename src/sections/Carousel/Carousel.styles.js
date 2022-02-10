@@ -18,23 +18,8 @@ export const CustomSwiper = styled(Swiper)`
   & > .swiper-pagination {
     z-index: 9999;
     background: #181a21;
-    bottom: 0;
     padding: 5px 0;
-
-    --pagination-width: 25px;
-
-    gap: 8px;
-
-    @media (min-width: 1024px) {
-      width: var(--pagination-width);
-      padding: 30px 0;
-      left: calc(100% - var(--pagination-width));
-      top: 0;
-
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
+    bottom: 0;
   }
 
   .custom-swiper-pagination-bullet {
@@ -45,6 +30,8 @@ export const CustomSwiper = styled(Swiper)`
     background: white;
     opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.3);
     cursor: pointer;
+    margin: 0 5px;
+    padding: 5px;
   }
 
   .custom-swiper-pagination-bullet-active {
