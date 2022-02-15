@@ -1,14 +1,8 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination, Navigation } from "swiper";
-
-import Project from "../components/Project/Project";
 
 import NavigationContext from "../contexts/NavigationContext";
 
 import works from "../utils/works";
-import CarouselVideos from "../sections/CarouselVideos/CarouselVideos";
-import YTEmbedder from "../components/YTEmbedder/YTEmbedder";
 import Projects from "../sections/Projects/Projects";
 
 interface Props {
@@ -47,43 +41,3 @@ const Works: React.FC<Props> = ({ className, ...props }) => {
 };
 
 export default Works;
-
-// <CarouselVideos
-//   spaceBetween={30}
-//   centeredSlides={true}
-//   onSlideChange={({ realIndex }) => {
-//     if (currentPlayer) {
-//       setCurrentWork(works[realIndex]);
-//       currentPlayer.stopVideo();
-
-//       const newCurrentPlayer = youtubeRefArr[realIndex].current;
-//       newCurrentPlayer.playVideo();
-//       setCurrenPlayer(newCurrentPlayer);
-//     }
-//   }}
-//   modules={[Pagination]}>
-//   {works.map(({ ytVideoId }, i) => {
-//     return (
-//       <div key={i}>
-//         {ytVideoId && (
-//           <YTEmbedder
-//             ref={youtubeRefArr[i]}
-//             onReady={(event) => {
-//               const player = event.target;
-//               if (i === 0) {
-//                 player.playVideo();
-//                 setCurrenPlayer(player);
-//               }
-
-//               youtubeRefArr[i].current = player;
-//             }}
-//             index={i}
-//             videoId={ytVideoId}
-//             className="max-w-[70%]"
-//             containerClassName="lg:min-h-[250px] flex justify-center"
-//           />
-//         )}
-//       </div>
-//     );
-//   })}
-// </CarouselVideos>

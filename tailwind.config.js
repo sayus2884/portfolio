@@ -23,6 +23,7 @@ module.exports = {
         gum: "#D15362",
         blackberry: "#1B202F",
         "blackberry-500": "#181a21",
+        "blackberry-600": "#0e0f14",
       },
       spacing: {
         inherit: "inherit",
