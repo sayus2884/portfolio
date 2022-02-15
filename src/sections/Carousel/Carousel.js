@@ -37,8 +37,6 @@ function Carousel({ children, className, ...props }) {
       }}
       modules={[Mousewheel, Pagination]}
       {...props}>
-      <Nav className="absolute w-full top-0 z-50" />
-
       {Children.map(children, (child, i) => {
         return (
           <SwiperSlide key={i} className="w-full flex justify-end">

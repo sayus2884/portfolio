@@ -9,8 +9,6 @@ import NavigationContext from "../../contexts/NavigationContext";
 const [PROJECTS, ABOUT, CONTACT] = [0, 1, 2];
 
 function Nav({ className, ...props }) {
-  const dropdownNav = useRef();
-  const { route } = useRouter();
   const { current, navigateTo } = useContext(NavigationContext);
 
   const [active, setActive] = useState(PROJECTS);
@@ -27,29 +25,18 @@ function Nav({ className, ...props }) {
 
   useEffect(() => {
     const selectedOption = options.find(({ value }) => value === current);
-    dropdownNav.current.dropdown.setSelectedItem(selectedOption);
     setActive(selectedOption.value);
   }, [current]);
 
   return (
-    <section className={`${className} flex flex-row py-20 px-30 justify-between items-center`}>
-      <div className="flex space-x-8 text-chocolate">
+    <section className={`${className} flex flex-row  justify-between items-center z-50`}>
+      <div className="flex space-x-8">
         <h1 className="font-header">Jonacius Villamor</h1>
-        <span>|</span>
-        <p>Fullstack Web Developer</p>
       </div>
 
       <nav>
-        <Dropdown
-          ref={dropdownNav}
-          className={"text-chocolate min-w-[120px] md:hidden"}
-          options={options}
-          onItemSelected={handleItemSelected}
-          defaultOption={options[PROJECTS]}
-        />
-
         <div className="hidden md:block lg:pr-20">
-          <ul className="flex gap-15 justify justify-end text-blackberry font-bold">
+          <ul className="flex gap-15 justify justify-end font-bold">
             <li
               className={`text-20 hover:text-white hover:opacity-50 ${
                 active === PROJECTS && "text-white"

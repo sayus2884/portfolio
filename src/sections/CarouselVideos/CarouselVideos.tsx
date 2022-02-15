@@ -1,10 +1,16 @@
 import { Children } from "react";
 
-import { SwiperSlide } from "swiper/react";
+import { SwiperSlide, SwiperProps } from "swiper/react";
 import { CustomSwiper } from "./CarouselVideos.styles";
-import { Mousewheel, Pagination } from "swiper";
+import { Mousewheel, Pagination, SwiperOptions } from "swiper";
 
-function CarouselVideos({ children, className, ...props }) {
+import React from "react";
+
+interface Props extends SwiperOptions, SwiperProps {
+  className?: string;
+}
+
+const CarouselVideos: React.FC<Props> = ({ className, children, ...props }) => {
   return (
     <CustomSwiper
       className={className}
@@ -27,6 +33,6 @@ function CarouselVideos({ children, className, ...props }) {
       })}
     </CustomSwiper>
   );
-}
+};
 
 export default CarouselVideos;

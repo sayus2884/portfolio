@@ -11,6 +11,10 @@ html {
   overflow-x: hidden;
 }
 
+.color-picker {
+  color: #181a21;
+}
+
 *::-webkit-scrollbar {
   display: block;
   width: 8px;

@@ -1,13 +1,15 @@
-import { useContext } from "react";
-import Link from "next/link";
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
 
 import Button from "../../components/Button/Button";
 
 import NavigationContext from "../../contexts/NavigationContext";
 
-function About({ children, className, ...props }) {
-  const { navigateTo } = useContext(NavigationContext);
+interface Props {
+  className?: string;
+}
 
+const About: React.FC<Props> = ({ className, ...props }) => {
   return (
     <div className={className}>
       <div className="relative flex flex-col gap-30 items-center px-45 h-full overflow-auto">
@@ -21,10 +23,10 @@ function About({ children, className, ...props }) {
           streamers, documentaries, and great storytelling shows and movies.
         </p>
 
-        <Button onClick={() => navigateTo(2)}>Get in touch</Button>
+        <Button onClick={() => console.log("navigate to contacts")}>Get in touch</Button>
       </div>
     </div>
   );
-}
+};
 
 export default About;

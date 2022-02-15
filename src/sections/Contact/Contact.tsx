@@ -1,6 +1,5 @@
-import { useState, forwardRef, useRef, useEffect } from "react";
+import React, { useState, forwardRef, useRef, useEffect, createContext, useContext } from "react";
 import { isEmail } from "validator";
-import Link from "next/link";
 import axios from "axios";
 import { PaperPlaneTilt, LinkBreak, SpinnerGap } from "phosphor-react";
 
@@ -8,31 +7,49 @@ import Input from "../../components/Input/Input";
 import Textarea from "../../components/Textarea/Textarea";
 import Button from "../../components/Button/Button";
 
-function Contact({ children, className, ...props }) {
-  const [messageSent, setMessageSent] = useState(false);
-  const [messageSentFailed, setMessageSentFailed] = useState(false);
-  const nameRef = useRef();
+const useContact = () => {
+  const [name, setNameValue] = useState("");
+  return { name, setNameValue };
+};
 
-  return (
-    <div className={className}>
-      <div className="relative flex flex-col gap-30 items-center px-45 h-full overflow-auto">
-        {!messageSent && !messageSentFailed && (
-          <Form
-            ref={nameRef}
-            onMessageSent={() => setMessageSent(true)}
-            onMessageSentFailed={() => setMessageSentFailed(true)}
-          />
-        )}
+const ContactContext = createContext(undefined);
 
-        {messageSent && <SuccessPrompt sender={nameRef.current} />}
-
-        {messageSentFailed && <FailedPrompt />}
-      </div>
-    </div>
-  );
+interface Props {
+  className?: string;
 }
 
-const Form = forwardRef(({ onMessageSent, onMessageSentFailed }, ref) => {
+const Contact: React.FC<Props> = ({ children, className, ...props }) => {
+  const [messageSent, setMessageSent] = useState(false);
+  const [messageSentFailed, setMessageSentFailed] = useState(false);
+  const { name, setNameValue } = useContact();
+
+  return (
+    <ContactContext.Provider value={{ name, setNameValue }}>
+      <div className={className}>
+        <div className="relative flex flex-col gap-30 items-center px-45 h-full overflow-auto">
+          {!messageSent && !messageSentFailed && (
+            <Form
+              onMessageSent={() => setMessageSent(true)}
+              onMessageSentFailed={() => setMessageSentFailed(true)}
+            />
+          )}
+
+          {messageSent && <SuccessPrompt sender={name} />}
+
+          {messageSentFailed && <FailedPrompt />}
+        </div>
+      </div>
+    </ContactContext.Provider>
+  );
+};
+
+interface FormProps {
+  onMessageSent: () => void;
+  onMessageSentFailed: () => void;
+}
+
+const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
+  const { setNameValue } = useContext(ContactContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -63,15 +80,16 @@ const Form = forwardRef(({ onMessageSent, onMessageSentFailed }, ref) => {
       })
       .then((res) => {
         if (res) {
+          setNameValue(name);
           onMessageSent();
         }
       })
-      .catch((err) => onMessageSentFailed());
-  };
+      .catch((err) => {
+        console.log(err);
 
-  useEffect(() => {
-    ref.current = name;
-  }, [name]);
+        onMessageSentFailed();
+      });
+  };
 
   useEffect(() => {
     return setSending(false);
@@ -125,11 +143,11 @@ const Form = forwardRef(({ onMessageSent, onMessageSentFailed }, ref) => {
       </form>
     </>
   );
-});
+};
 
-function SuccessPrompt({ sender = "test" }) {
+const SuccessPrompt = ({ sender = "test" }) => {
   return (
-    <div className="flex flex-col items-center gap-24 text-center justify-center h-4/5">
+    <div className="flex flex-col items-center gap-24 text-justify justify-center h-4/5">
       <PaperPlaneTilt size={80} />
       <h2 className="text-36">Message Sent!</h2>
       <p className="text-22">
@@ -139,11 +157,11 @@ function SuccessPrompt({ sender = "test" }) {
       </p>
     </div>
   );
-}
+};
 
-function FailedPrompt() {
+const FailedPrompt = () => {
   return (
-    <div className="flex flex-col items-center gap-24 text-center justify-center h-4/5">
+    <div className="flex flex-col items-center gap-24 text-justify justify-center h-4/5">
       <LinkBreak size={80} />
       <h2 className="text-36">Message was not sent... :(</h2>
       <p className="text-22">
@@ -153,6 +171,6 @@ function FailedPrompt() {
       </p>
     </div>
   );
-}
+};
 
 export default Contact;

@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: ["./src/**/*.{html,js,ts,tsx}"],
   theme: {
     fontFamily: {
       header: ['"Good Times"'],
@@ -13,7 +13,7 @@ module.exports = {
         "spin-rays": "spin 900s linear reverse infinite",
       },
       backgroundImage: {
-        "code-image": "url('/images/code.jpg')",
+        "code-image": "url('/images/code.png')",
       },
       colors: {
         // Configure your color palette here
@@ -22,8 +22,10 @@ module.exports = {
         apple: "#D16D68",
         gum: "#D15362",
         blackberry: "#1B202F",
+        "blackberry-500": "#181a21",
       },
       spacing: {
+        inherit: "inherit",
         orbit: "1500px",
         8: "8px",
         10: "10px",
