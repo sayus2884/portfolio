@@ -1,24 +1,23 @@
 import React from "react";
+import { CustomButton, ITheme } from "./Button.styles";
 
 interface Props
-  extends React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > {
+  extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>,
+    ITheme {
   className?: string;
   disabled?: boolean;
+  onClick?: () => void;
 }
 
-const Button: React.FC<Props> = ({ className, children, disabled = false, ...props }) => {
+const Button: React.FC<Props> = ({ className, children, disabled = false, imageUrl, onClick }) => {
   return (
-    <button
-      className={`${className} border border-plum text-plum px-15 py-10 rounded-sm ${
-        !disabled && "hover:bg-plum hover:text-white"
-      } ${disabled && "cursor-default"}`}
+    <CustomButton
+      className={`${className}`}
       disabled={disabled}
-      {...props}>
+      imageUrl={imageUrl}
+      onClick={onClick}>
       {children}
-    </button>
+    </CustomButton>
   );
 };
 

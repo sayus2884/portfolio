@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Button from "../../components/Button/Button";
 
-import NavigationContext from "../../contexts/NavigationContext";
+import NavigationContext from "../../contexts/ProjectNavigationContext";
 
 interface Props {
   className?: string;
