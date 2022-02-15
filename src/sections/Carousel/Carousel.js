@@ -1,12 +1,10 @@
-import { Children, useState, useEffect, useContext, useRef } from "react";
+import { Children, useEffect, useContext, useRef } from "react";
 
 import { SwiperSlide } from "swiper/react";
 import { CustomSwiper } from "./Carousel.styles";
 import { Mousewheel, Pagination } from "swiper";
 
-import Nav from "../Nav/Nav";
-
-import NavigationContext from "../../contexts/NavigationContext";
+import NavigationContext from "../../contexts/ProjectNavigationContext";
 
 function Carousel({ children, className, ...props }) {
   const { current, navigateTo } = useContext(NavigationContext);

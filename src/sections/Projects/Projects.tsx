@@ -9,9 +9,10 @@ import { Pagination, Navigation } from "swiper";
 interface Props {
   className?: string;
   projects: ProjectProps[];
+  index: number;
 }
 
-const Projects: React.FC<Props> = ({ className, projects, ...props }) => {
+const Projects: React.FC<Props> = ({ className, projects, index }) => {
   return (
     <CustomSwiper
       className="h-full"
@@ -19,6 +20,9 @@ const Projects: React.FC<Props> = ({ className, projects, ...props }) => {
       spaceBetween={10}
       pagination={{
         clickable: true,
+      }}
+      onSwiper={(swiper) => {
+        swiper.slideTo(index);
       }}
       modules={[Pagination, Navigation]}>
       {projects.map((work, i) => (

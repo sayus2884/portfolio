@@ -9,21 +9,21 @@ import { AnimatePresence } from "framer-motion";
 
 import Layout from "../sections/Layout/Layout";
 
-import NavigationContext from "../contexts/NavigationContext";
+import ProjectNavigationContext from "../contexts/ProjectNavigationContext";
 
-import useNavigation from "../hooks/use-navigation";
+import useNavigation from "../hooks/use-project-navigation";
 
 function MyApp({ Component, pageProps }) {
-  const [current, navigateTo] = useNavigation();
+  const [projectIndex, navigateTo] = useNavigation();
 
   return (
-    <NavigationContext.Provider value={{ current, navigateTo }}>
+    <ProjectNavigationContext.Provider value={{ projectIndex, navigateTo }}>
       <AnimatePresence exitBeforeEnter>
         <Layout>
           <Component {...pageProps} />
         </Layout>
       </AnimatePresence>
-    </NavigationContext.Provider>
+    </ProjectNavigationContext.Provider>
   );
 }
 

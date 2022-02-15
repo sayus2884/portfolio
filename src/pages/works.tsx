@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from "react";
 
-import NavigationContext from "../contexts/NavigationContext";
+import ProjectNavigationContext from "../contexts/ProjectNavigationContext";
 
 import works from "../utils/works";
 import Projects from "../sections/Projects/Projects";
@@ -10,9 +10,8 @@ interface Props {
 }
 
 const Works: React.FC<Props> = ({ className, ...props }) => {
-  const [currentWork, setCurrentWork] = useState(works[0]);
   const [currentPlayer, setCurrenPlayer] = useState(null);
-  const { current } = useContext(NavigationContext);
+  const { projectIndex } = useContext(ProjectNavigationContext);
   const youtubeRefArr = [];
 
   works.forEach((work, i) => {
@@ -24,17 +23,17 @@ const Works: React.FC<Props> = ({ className, ...props }) => {
       return;
     }
 
-    if (current !== 0) {
+    if (projectIndex !== 0) {
       currentPlayer.stopVideo();
     } else {
       currentPlayer.playVideo();
     }
-  }, [current]);
+  }, [projectIndex]);
 
   return (
     <section className="flex flex-col gap-10 w-full">
       <div className="h-full">
-        <Projects projects={works} />
+        <Projects projects={works} index={projectIndex} />
       </div>
     </section>
   );
