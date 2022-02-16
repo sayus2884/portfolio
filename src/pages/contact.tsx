@@ -3,9 +3,9 @@ import { isEmail } from "validator";
 import axios from "axios";
 import { PaperPlaneTilt, LinkBreak, SpinnerGap } from "phosphor-react";
 
-import Input from "../../components/Input/Input";
-import Textarea from "../../components/Textarea/Textarea";
-import Button from "../../components/Button/Button";
+import Input from "../components/Input/Input";
+import Textarea from "../components/Textarea/Textarea";
+import Button from "../components/Button/Button";
 
 const useContact = () => {
   const [name, setNameValue] = useState("");
@@ -24,22 +24,24 @@ const Contact: React.FC<Props> = ({ children, className, ...props }) => {
   const { name, setNameValue } = useContact();
 
   return (
-    <ContactContext.Provider value={{ name, setNameValue }}>
-      <div className={className}>
-        <div className="relative flex flex-col gap-30 items-center px-45 h-full overflow-auto">
-          {!messageSent && !messageSentFailed && (
-            <Form
-              onMessageSent={() => setMessageSent(true)}
-              onMessageSentFailed={() => setMessageSentFailed(true)}
-            />
-          )}
+    <div className="bg-blackberry lg:rounded-l-lg w-full overflow-auto">
+      <div className="flex justify-center py-20 lg:py-40 h-full">
+        <div className="flex flex-col gap-30 min-w-500 items-center">
+          <ContactContext.Provider value={{ name, setNameValue }}>
+            {!messageSent && !messageSentFailed && (
+              <Form
+                onMessageSent={() => setMessageSent(true)}
+                onMessageSentFailed={() => setMessageSentFailed(true)}
+              />
+            )}
 
-          {messageSent && <SuccessPrompt sender={name} />}
+            {messageSent && <SuccessPrompt sender={name} />}
 
-          {messageSentFailed && <FailedPrompt />}
+            {messageSentFailed && <FailedPrompt />}
+          </ContactContext.Provider>
         </div>
       </div>
-    </ContactContext.Provider>
+    </div>
   );
 };
 
@@ -100,19 +102,24 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
       <h2 className="text-32 font-header tracking-widest w-full">Get In Touch!</h2>
 
       <form className="flex flex-col gap-24 w-full" onSubmit={handleSubmit}>
-        <div className="grid grid-cols-2 gap-8">
+        <label className="w-full">
+          <span className="block mb-[5px]">Name</span>
           <Input
-            className="bg-transparent border border-moonlight p-15 rounded"
+            className="bg-transparent border border-moonlight p-15 w-full rounded"
             type="text"
             name="name"
             placeholder="Your Name"
             onChange={handleNameChange}
             value={name}
+            id="name"
             required
           />
+        </label>
 
+        <label>
+          <span className="block mb-[5px]">Email</span>
           <Input
-            className="bg-transparent border border-moonlight p-15 rounded"
+            className="bg-transparent border border-moonlight p-15 w-full rounded"
             type="email"
             name="email"
             placeholder="Your Email"
@@ -120,19 +127,22 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
             value={email}
             required
           />
-        </div>
+        </label>
 
-        <Textarea
-          className="bg-transparent border border-moonlight h-180 p-15 rounded"
-          type="text"
-          name="message"
-          value={message}
-          onChange={handleMessageChange}
-          placeholder="What do you have in mind?"
-          minLength="2"
-          maxLength="1000"
-          required
-        />
+        <label>
+          <span className="block mb-[5px]">Message</span>
+          <Textarea
+            className="bg-transparent border border-moonlight h-180 p-15 w-full rounded"
+            type="text"
+            name="message"
+            value={message}
+            onChange={handleMessageChange}
+            placeholder="What do you have in mind?"
+            minLength="2"
+            maxLength="1000"
+            required
+          />
+        </label>
 
         <Button
           type="submit"

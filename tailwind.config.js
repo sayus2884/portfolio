@@ -65,6 +65,9 @@ module.exports = {
       },
       minWidth: {
         lg_card: "1050px",
+        500: "500px",
+        600: "600px",
+        800: "800px",
       },
 
       maxWidth: {

@@ -5,7 +5,7 @@ interface Props {
   className?: string;
 }
 
-const about: React.FC<Props> = ({ className, ...props }) => {
+const About: React.FC<Props> = ({ className, ...props }) => {
   return (
     <div className="bg-blackberry lg:rounded-l-lg w-full overflow-auto">
       <div className="flex justify-center py-20">
@@ -27,4 +27,4 @@ const about: React.FC<Props> = ({ className, ...props }) => {
   );
 };
 
-export default about;
+export default About;
