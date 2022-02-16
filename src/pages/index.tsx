@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
 
 import Button from "../components/Button/Button";
 
@@ -26,10 +26,10 @@ function Home() {
         <div className="relative bg-code-image lg:bg-none bg-center bg-no-repeat bg-cover h-[250px] sm:h-[350px] md:h-[400px] lg:h-full w-full">
           <div className="absolute lg:hidden inset-0 bg-black opacity-20 z-10"></div>
 
-          <div className="relative flex flex-col gap-10 justify-center items-center h-full z-50 text-left">
-            <h1 className="font-header max-w-[350px] md:max-w-[450px] md:max-w-[450px] tracking-wider sm:tracking-normal text-[20px] md:text-[32px] lg:text-[34px]">
-              I build web apps with <span className="text-red-500">thought</span> and{" "}
-              <span className="text-red-500">efficiency</span>.
+          <div className="relative flex flex-col gap-10 lg:gap-20 justify-center items-center h-full z-50 text-left">
+            <h1 className="font-header max-w-[350px] md:max-w-[450px] tracking-wider lg:tracking-[.2em] sm:tracking-normal text-[20px] md:text-[32px] lg:text-[46px] leading-tight">
+              I make web apps with <span className="text-red-500">thought</span> &#38;{" "}
+              <span className="text-red-500">efficiency</span>
             </h1>
             <p className="min-w-[350px] md:min-w-[450px] text-[12px] sm:text-[16px] md:text-20">
               Full Stack Web Developer | Jonacius V.
@@ -44,6 +44,12 @@ function Home() {
             <Swiper
               slidesPerView={1}
               spaceBetween={10}
+              loop={true}
+              autoplay={{
+                delay: 3500,
+                pauseOnMouseEnter: true,
+                disableOnInteraction: false,
+              }}
               pagination={{
                 clickable: true,
               }}
@@ -56,12 +62,8 @@ function Home() {
                   slidesPerView: 1,
                   spaceBetween: 30,
                 },
-                1250: {
-                  slidesPerView: 2,
-                  spaceBetween: 30,
-                },
               }}
-              modules={[Pagination, Navigation]}>
+              modules={[Pagination, Navigation, Autoplay]}>
               {works.map((work, i) => (
                 <SwiperSlide key={i}>
                   <Button

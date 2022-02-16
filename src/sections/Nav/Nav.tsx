@@ -17,7 +17,7 @@ function Nav({ className, ...props }) {
 
   return (
     <section
-      className={`${className} flex flex-row justify-between items-center z-50 md:px-20 lg:px-40 xl:px-60`}>
+      className={`${className} flex flex-row justify-between items-center z-50 md:px-20 lg:px-60 xl:px-80`}>
       <div className="flex space-x-8">
         <button onClick={() => handleNavigation("/")}>
           <h1 className="font-header cursor-pointer">Jonacius Villamor</h1>
@@ -26,12 +26,12 @@ function Nav({ className, ...props }) {
 
       <nav>
         <div className="hidden md:block">
-          <ul className="flex gap-30 justify justify-end font-bold">
+          <ul className="flex gap-30 lg:gap-40 justify justify-end font-bold">
             {routes.map(({ name, route }, i) => (
               <li
                 key={i}
                 className={`text-18 ${
-                  active === route ? "text-plum" : "hover:text-white hover:opacity-50"
+                  active === route ? "text-plum" : "hover:text-white hover:opacity-70"
                 }`}>
                 <button className="tracking-wide" onClick={() => handleNavigation(route)}>
                   {name}
