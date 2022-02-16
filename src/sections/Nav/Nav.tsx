@@ -1,16 +1,9 @@
-import { useState, useEffect, useRef, useContext } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
-
-import Dropdown from "../../components/Dropdown/Dropdown";
-
-import NavigationContext from "../../contexts/ProjectNavigationContext";
-
-const [PROJECTS, ABOUT, CONTACT] = ["/works", "/about", "/contact"];
 
 function Nav({ className, ...props }) {
   const router = useRouter();
-  const [active, setActive] = useState(PROJECTS);
+  const [active, setActive] = useState(router.pathname);
   const routes = [
     { name: "Works", route: "/works" },
     { name: "About", route: "/about" },
@@ -26,9 +19,9 @@ function Nav({ className, ...props }) {
     <section
       className={`${className} flex flex-row justify-between items-center z-50 md:px-20 lg:px-40 xl:px-60`}>
       <div className="flex space-x-8">
-        <Link href={"/"}>
+        <button onClick={() => handleNavigation("/")}>
           <h1 className="font-header cursor-pointer">Jonacius Villamor</h1>
-        </Link>
+        </button>
       </div>
 
       <nav>
