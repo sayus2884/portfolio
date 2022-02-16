@@ -10,6 +10,8 @@ export interface ProjectProps {
   imageUrl?: string;
   technologies: string[];
   description: string[];
+  problems: string[];
+  solutions: string[];
   link: string;
   github: string;
   ytVideoId: string;
@@ -24,6 +26,8 @@ const Project: React.FC<Props> = ({
   imageUrl,
   title,
   description,
+  problems,
+  solutions,
   technologies,
   link,
   github,
@@ -32,26 +36,48 @@ const Project: React.FC<Props> = ({
 }) => {
   return (
     <div className="flex flex-col gap-20 overflow-auto h-inherit pb-40" {...props}>
-      <div>
-        <ImageBanner className="h-[200px] sm:h-[300px] md:h-[450px] bg-red-200" imageUrl={imageUrl}>
+      <div className="flex flex-col items-center">
+        <ImageBanner className="h-[200px] sm:h-[300px] md:h-[450px] w-full" imageUrl={imageUrl}>
           <h2 className="hidden sm:block font-header tracking-widest text-22 md:text-32 p-15 lg:p-40 text-blackberry">
             {title}{" "}
           </h2>
         </ImageBanner>
 
-        <div className="flex flex-col gap-25 px-10 pt-20">
-          <div className="flex flex-col gap-20">
-            <h2 className="sm:hidden font-header tracking-widest text-22  sm:text-blackberry">
+        <div className="flex flex-col gap-25 px-20 md:px-45 pt-20 max-w-650 justify-center">
+          <div className="flex flex-col gap-10">
+            <h2 className="sm:hidden font-header tracking-widest text-22 sm:text-blackberry">
               {title}{" "}
             </h2>
-            <p>Made with {technologies.join(", ")}</p>
+            <p className="text-[14px] opacity-70">Made with {technologies.join(", ")}</p>
           </div>
 
           <div>
-            <h3 className="text-22 font-bold">Overview</h3>
+            <h3 className="text-22 font-bold mb-10">Overview</h3>
 
-            <div className="flex flex-col gap-20">
+            <div className="flex flex-col gap-20 text-justify">
               {description.map((text, i) => (
+                <div key={i}>{text}</div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-22 font-bold mb-10">Problems Encountered</h3>
+
+            <div className="flex flex-col gap-10 text-justify">
+              <ul className="list-disc list-inside">
+                {problems.map((text, i) => (
+                  <li key={i}>{text}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-22 font-bold mb-10">Solutions</h3>
+
+            <div className="flex flex-col gap-20 text-justify">
+              {solutions.map((text, i) => (
                 <div key={i}>{text}</div>
               ))}
             </div>
