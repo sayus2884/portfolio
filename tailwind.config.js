@@ -73,6 +73,7 @@ module.exports = {
       maxWidth: {
         orbit: "500px",
         card: "750px",
+        500: "500px",
         650: "650px",
         735: "735px",
         800: "800px",

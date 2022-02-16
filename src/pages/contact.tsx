@@ -26,7 +26,7 @@ const Contact: React.FC<Props> = ({ children, className, ...props }) => {
   return (
     <div className="bg-blackberry lg:rounded-l-lg w-full overflow-auto">
       <div className="flex justify-center py-20 lg:py-40 h-full">
-        <div className="flex flex-col gap-30 min-w-500 items-center">
+        <div className="flex flex-col gap-30 w-full md:max-w-500 px-20 md:px-40 lg:px-0 items-center">
           <ContactContext.Provider value={{ name, setNameValue }}>
             {!messageSent && !messageSentFailed && (
               <Form
