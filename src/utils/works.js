@@ -1,6 +1,7 @@
 const works = [
   {
     title: "The Bug Tracker",
+    imageUrl: "/images/bug_tracker.png",
     technologies: ["NextJs", "TailwindCSS"],
     description: [
       "Currently undergoing research and wireframing, the bug tracker is for reporting and managing bugs, features, and tasks which help manage a project's life cycle from beginning to end. The project is open-source, so feel free to use it for your own use.",
@@ -11,6 +12,7 @@ const works = [
   },
   {
     title: "MyOshis.ch",
+    imageUrl: "/images/bug_tracker.png",
     technologies: ["NextJs", "TailwindCSS", "Express", "Youtube Data API"],
     description: [
       "A platform for viewing multiple virtual streamers (Vtubers) from Youtube at the same time. A very convenient way to watch multiple point-of-views when Vtubers do collaboration streams. Currently, the list of Vtubers consist of members from Hololive but in the future will be updated with Nijisanji members and other independent Vtubers.",
@@ -25,6 +27,7 @@ const works = [
   },
   {
     title: "Portfolio",
+    imageUrl: "/images/bug_tracker.png",
     technologies: ["NextJs", "TailwindCSS", "Swipe"],
     description: [
       "My online portfolio to showcase what I can do and what I have made. The design is inspired by the business card layout in a single page application setting to allow for interesting interactivity. The web app is built with NextJS, TailwindCSS, and Swipe; and is prototyped using Framer. The code is available on github for viewing.",

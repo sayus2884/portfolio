@@ -1,4 +1,5 @@
 import React from "react";
+import { ThemedStyledFunction } from "styled-components";
 import { CustomButton, ITheme } from "./Button.styles";
 
 interface Props
@@ -6,18 +7,38 @@ interface Props
     ITheme {
   className?: string;
   disabled?: boolean;
+  imageUr?: string;
   onClick?: () => void;
 }
 
-const Button: React.FC<Props> = ({ className, children, disabled = false, imageUrl, onClick }) => {
+const Button: React.FC<Props> = ({
+  className,
+  children,
+  disabled = false,
+  onClick,
+  imageUrl,
+  ...props
+}) => {
+  if (imageUrl)
+    return (
+      <CustomButton
+        className={`${className}`}
+        onClick={onClick}
+        disabled={disabled}
+        imageUrl={imageUrl}>
+        {children}
+      </CustomButton>
+    );
+
   return (
-    <CustomButton
-      className={`${className}`}
+    <button
+      className={`${className} border border-plum text-plum px-15 py-10 rounded-sm ${
+        !disabled && "hover:bg-plum hover:text-white"
+      } ${disabled && "cursor-default"}`}
       disabled={disabled}
-      imageUrl={imageUrl}
-      onClick={onClick}>
+      {...props}>
       {children}
-    </CustomButton>
+    </button>
   );
 };
 
