@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 function Nav({ className, ...props }) {
@@ -14,6 +14,12 @@ function Nav({ className, ...props }) {
     setActive(route);
     router.push(route);
   };
+
+  useEffect(() => {
+    routes.forEach(({ route }) => {
+      router.prefetch(route);
+    });
+  }, []);
 
   return (
     <section

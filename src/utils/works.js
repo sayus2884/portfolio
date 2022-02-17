@@ -14,7 +14,7 @@ const works = [
   },
   {
     title: "MyOshis.ch",
-    imageUrl: "/images/bug_tracker.png",
+    imageUrl: "/images/myoshis.png",
     technologies: ["NextJs", "TailwindCSS", "Express", "Youtube Data API"],
     description: [
       "A platform for viewing multiple virtual streamers (Vtubers) from Youtube at the same time. A very convenient way to watch multiple point-of-views when Vtubers do collaboration streams. Currently, the list of Vtubers consist of members from Hololive but in the future will be updated with Nijisanji members and other independent Vtubers.",
