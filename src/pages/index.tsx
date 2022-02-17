@@ -8,6 +8,7 @@ import Button from "../components/Button/Button";
 import works from "../utils/works";
 
 import ProjectNavigationContext from "./../contexts/ProjectNavigationContext";
+import Socials from "./../sections/Socials/Socials";
 
 function Home() {
   const { navigateTo } = useContext(ProjectNavigationContext);
@@ -34,11 +35,18 @@ function Home() {
             <p className="min-w-[350px] md:min-w-[450px] text-[12px] sm:text-[16px] md:text-20">
               Full Stack Web Developer | Jonacius V.
             </p>
+
+            <div className="min-w-[450px]">
+              <Socials className="hidden lg:flex gap-30 w-full" size={18} />
+            </div>
           </div>
         </div>
 
         <div className="px-15 lg:pl-0 lg:pr-[80px] pb-40 lg:mb-0 lg:max-w-[800px]">
-          <h2 className="lg:hidden font-header my-20 text-24">My Works</h2>
+          <div className="lg:hidden flex justify-between w-full items-center mb-15 mt-35">
+            <h2 className="font-header text-24">My Works</h2>
+            <Socials className="gap-20" />
+          </div>
 
           <div className="flex items-center h-full ">
             <Swiper
@@ -68,7 +76,7 @@ function Home() {
                 <SwiperSlide key={i}>
                   <Button
                     imageUrl={work.imageUrl}
-                    className="relative h-500 w-full bg-blackberry-500 rounded-md shadow-md"
+                    className="relative h-480 w-full bg-blackberry-500 rounded-md shadow-md"
                     onClick={() => handleProjectClick(i)}>
                     <h3 className="absolute top-15 left-0 px-15 py-[5px] text-blackberry font-bold text-16 text-white/80 bg-blackberry-500 rounded-r-md shadow-md">
                       {work.title}
