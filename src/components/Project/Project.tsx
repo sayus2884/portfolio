@@ -38,7 +38,7 @@ const Project: React.FC<Props> = ({
     <div className="flex flex-col gap-20 overflow-auto h-inherit pb-40" {...props}>
       <div className="flex flex-col items-center">
         <ImageBanner className="h-[200px] sm:h-[300px] md:h-[450px] w-full" imageUrl={imageUrl}>
-          <h2 className="hidden sm:block font-header tracking-widest text-22 md:text-32 p-15 lg:p-40 text-blackberry">
+          <h2 className="hidden sm:block font-header tracking-widest text-22 md:text-25 lg:text-32 text-white/80 py-10 px-15 mt-30 lg:py-15 lg:px-30 w-fit bg-blackberry rounded-r-md shadow-md">
             {title}{" "}
           </h2>
         </ImageBanner>
@@ -54,7 +54,7 @@ const Project: React.FC<Props> = ({
           <div>
             <h3 className="text-22 font-bold mb-10">Overview</h3>
 
-            <div className="flex flex-col gap-20 text-justify">
+            <div className="flex flex-col gap-20">
               {description.map((text, i) => (
                 <div key={i}>{text}</div>
               ))}
@@ -64,7 +64,7 @@ const Project: React.FC<Props> = ({
           <div>
             <h3 className="text-22 font-bold mb-10">Problems Encountered</h3>
 
-            <div className="flex flex-col gap-10 text-justify">
+            <div className="flex flex-col gap-10">
               <ul className="list-disc list-inside">
                 {problems.map((text, i) => (
                   <li key={i}>{text}</li>
@@ -76,7 +76,7 @@ const Project: React.FC<Props> = ({
           <div>
             <h3 className="text-22 font-bold mb-10">Solutions</h3>
 
-            <div className="flex flex-col gap-20 text-justify">
+            <div className="flex flex-col gap-20">
               {solutions.map((text, i) => (
                 <div key={i}>{text}</div>
               ))}

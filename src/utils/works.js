@@ -2,15 +2,31 @@ const works = [
   {
     title: "The Bug Tracker",
     imageUrl: "/images/bug_tracker.png",
-    technologies: ["NextJs", "TailwindCSS"],
+    technologies: ["Typescript", "NextJs", "TailwindCSS"],
     description: [
       "Currently undergoing research and wireframing, the bug tracker is for reporting and managing bugs, features, and tasks which help manage a project's life cycle from beginning to end. The project is open-source, so feel free to use it for your own use.",
     ],
     problems: ["First time using Typescript.", "Cookie size is too small."],
     solutions: [],
     github: "https://github.com/sayus2884/bug-tracker",
-    link: null,
+    link: "https://bug-tracker-delta.vercel.app/",
     ytVideoId: "XgNH-x7xsO8",
+  },
+  {
+    title: "My Portfolio",
+    imageUrl: "/images/portfolio.png",
+    technologies: ["Typescript", "NextJs", "TailwindCSS"],
+    description: [
+      "My online portfolio to showcase what I can do and what I have made. The design is inspired by the business card layout in a single page application setting to allow for interesting interactivity. The web app is built with NextJS, TailwindCSS, and Swipe; and is prototyped using Framer. The code is available on github for viewing.",
+    ],
+    problems: [
+      "Presenting information in a way that is pleasing and easy for viewers to digest.",
+      "Not mobile friendly.",
+    ],
+    solutions: [],
+    github: "https://github.com/sayus2884/portfolio",
+    link: null,
+    ytVideoId: "DvjbBWGC4c0",
   },
   {
     title: "MyOshis.ch",
@@ -31,22 +47,6 @@ const works = [
     github: null,
     link: "https://myoshis.ch",
     ytVideoId: "UGEsZHTuJsE",
-  },
-  {
-    title: "Portfolio",
-    imageUrl: "/images/portfolio.png",
-    technologies: ["NextJs", "TailwindCSS", "Swipe"],
-    description: [
-      "My online portfolio to showcase what I can do and what I have made. The design is inspired by the business card layout in a single page application setting to allow for interesting interactivity. The web app is built with NextJS, TailwindCSS, and Swipe; and is prototyped using Framer. The code is available on github for viewing.",
-    ],
-    problems: [
-      "Presenting information in a way that is pleasing and easy for viewers to digest.",
-      "Not mobile friendly.",
-    ],
-    solutions: [],
-    github: "https://github.com/sayus2884/portfolio",
-    link: null,
-    ytVideoId: "DvjbBWGC4c0",
   },
 ];
 

@@ -24,6 +24,7 @@ html {
   border-radius: 9999px;
   padding: 10px;
   background: transparent;
+  margin-block: 10px;
 }
 
 *::-webkit-scrollbar-thumb {

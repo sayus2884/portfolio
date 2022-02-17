@@ -37,7 +37,7 @@ function Home() {
             </p>
 
             <div className="min-w-[450px]">
-              <Socials className="hidden lg:flex gap-30 w-full" size={18} />
+              <Socials className="hidden lg:flex gap-30 w-full" size={22} />
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@ function Home() {
                     imageUrl={work.imageUrl}
                     className="relative h-480 w-full bg-blackberry-500 rounded-md shadow-md"
                     onClick={() => handleProjectClick(i)}>
-                    <h3 className="absolute top-15 left-0 px-15 py-[5px] text-blackberry font-bold text-16 text-white/80 bg-blackberry-500 rounded-r-md shadow-md">
+                    <h3 className="absolute top-15 left-0 px-15 py-[5px] font-bold text-16 text-white/80 bg-blackberry-500 rounded-r-md shadow-md">
                       {work.title}
                     </h3>
                   </Button>

@@ -108,7 +108,6 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
             className="bg-transparent border border-moonlight p-15 w-full rounded"
             type="text"
             name="name"
-            placeholder="Your Name"
             onChange={handleNameChange}
             value={name}
             id="name"
@@ -122,7 +121,6 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
             className="bg-transparent border border-moonlight p-15 w-full rounded"
             type="email"
             name="email"
-            placeholder="Your Email"
             onChange={handleEmailChange}
             value={email}
             required
@@ -130,14 +128,13 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
         </label>
 
         <label>
-          <span className="block mb-[5px]">Message</span>
+          <span className="block mb-[5px]">What do you have in mind?</span>
           <Textarea
             className="bg-transparent border border-moonlight h-180 p-15 w-full rounded"
             type="text"
             name="message"
             value={message}
             onChange={handleMessageChange}
-            placeholder="What do you have in mind?"
             minLength="2"
             maxLength="1000"
             required

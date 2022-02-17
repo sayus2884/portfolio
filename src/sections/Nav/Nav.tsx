@@ -36,8 +36,8 @@ function Nav({ className, ...props }) {
             {routes.map(({ name, route }, i) => (
               <li
                 key={i}
-                className={`text-14 ${
-                  active === route ? "text-plum" : "hover:text-white hover:opacity-70"
+                className={`text-16 ${
+                  active === route ? "text-plum text-bold" : "hover:text-white hover:opacity-70"
                 }`}>
                 <button className="tracking-wide" onClick={() => handleNavigation(route)}>
                   {name}
