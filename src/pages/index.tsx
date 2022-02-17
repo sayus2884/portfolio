@@ -28,11 +28,11 @@ function Home() {
           <div className="absolute lg:hidden inset-0 bg-black opacity-20 z-10"></div>
 
           <div className="relative flex flex-col gap-10 lg:gap-20 justify-center items-center h-full z-50 text-left">
-            <h1 className="font-header max-w-[350px] md:max-w-[450px] tracking-wider lg:tracking-[.2em] sm:tracking-normal text-[20px] md:text-[32px] lg:text-[46px] leading-tight">
+            <h1 className="font-header max-w-[350px] sm:max-w-[450px] tracking-wider lg:tracking-[.2em] sm:tracking-normal sm:text-center md:text-left text-[20px] sm:text-[28px] md:text-[32px] lg:text-[46px] leading-tight">
               I make web apps with <span className="text-red-500">thought</span> &#38;{" "}
               <span className="text-red-500">efficiency</span>
             </h1>
-            <p className="min-w-[350px] md:min-w-[450px] text-[12px] sm:text-[16px] md:text-20">
+            <p className="min-w-[350px] sm:min-w-[450px] sm:text-center md:text-left text-[12px] sm:text-[17px] md:text-20">
               Full Stack Web Developer | Jonacius V.
             </p>
 

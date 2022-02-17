@@ -34,7 +34,7 @@ const works = [
   },
   {
     title: "Portfolio",
-    imageUrl: "/images/bug_tracker.png",
+    imageUrl: "/images/portfolio.png",
     technologies: ["NextJs", "TailwindCSS", "Swipe"],
     description: [
       "My online portfolio to showcase what I can do and what I have made. The design is inspired by the business card layout in a single page application setting to allow for interesting interactivity. The web app is built with NextJS, TailwindCSS, and Swipe; and is prototyped using Framer. The code is available on github for viewing.",
