@@ -37,7 +37,7 @@ const About: React.FC<Props> = ({ className, ...props }) => {
               I like a lot of mediums; from listening to edgy 2000&apos;s music to learning new
               Science discoveries from Sci Show to watching cutesy, uwu Vtuber streamers, play
               games. Exposing myself to a variety of interesting things give me a lot of perspective
-              on the world around that inspire me to build apps creatively.
+              to the world around me which then, inspire me to build apps creatively.
             </p>
 
             <p className="text-16">Ready to work together?</p>
