@@ -16,7 +16,6 @@ module.exports = {
         "code-image": "url('/images/code.png')",
       },
       colors: {
-        // Configure your color palette here
         chocolate: "#312B33",
         plum: "#E19783",
         apple: "#D16D68",
@@ -28,6 +27,7 @@ module.exports = {
       spacing: {
         inherit: "inherit",
         orbit: "1500px",
+        nav: "50px",
         8: "8px",
         10: "10px",
         12: "12px",
@@ -89,6 +89,7 @@ module.exports = {
       fontSize: {
         version_size: "10px",
         title: "64px",
+        14: "14px",
         18: "18px",
         20: "20px",
         22: "22px",
