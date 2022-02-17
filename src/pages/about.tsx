@@ -8,17 +8,32 @@ interface Props {
 const About: React.FC<Props> = ({ className, ...props }) => {
   return (
     <div className="bg-blackberry lg:rounded-l-lg w-full overflow-auto">
-      <div className="flex justify-center py-20">
-        <div className="flex flex-col gap-30 max-w-650 items-center">
+      <div className="flex justify-center py-40">
+        <div className="flex flex-col gap-45 max-w-650 items-center">
           <img src="/images/profile.png" className="h-200 rounded-full border-2 border-plum" />
 
-          <p className="text-18 text-justify px-55">
-            I am a fullstack developer based in British Columbia, Canada. I like to build web apps
-            which are very useful and convenient. I do enjoy drawing which taught me some pretty
-            useful design and user experience techniques that I incorporate into my projects. I love
-            to listen and talk about ideas and possibility of things, hence why I like to watch
-            VTuber streamers, documentaries, and great storytelling shows and movies.
-          </p>
+          <div className="flex flex-col gap-30">
+            <p className="text-16 px-55">
+              I believe in not reinventing the wheel. If a solution exists, then I make use of it.
+              It is only when you combine these solutions that you can make something innovative.
+            </p>
+
+            <p className="text-16 px-55">
+              My name is Jonacius Villamor and I am a fullstack developer based in British Columbia,
+              Canada. I build web apps with careful thought and efficiency. I enjoy drawing which
+              taught me some pretty useful UX/UI techniques such as prototyping and designing,
+              making the coding process quick.
+            </p>
+
+            <p className="text-16 px-55">
+              I like a lot of mediums; from listening to edgy 2000's music to learning new Sci Show
+              sciency discoveries to watching cutesy Vtuber streamers, play games. Exposing myself
+              to a variety of interesting things give me a lot of perspective on life which inspires
+              me to build creative apps.
+            </p>
+
+            <p className="text-16 px-55">Ready to work together?</p>
+          </div>
 
           <Button onClick={() => console.log("navigate to contacts")}>Get in touch</Button>
         </div>

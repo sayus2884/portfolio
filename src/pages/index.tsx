@@ -67,10 +67,10 @@ function Home() {
               {works.map((work, i) => (
                 <SwiperSlide key={i}>
                   <Button
-                    imageUrl={"/images/bug_tracker.png"}
+                    imageUrl={work.imageUrl}
                     className="relative h-500 w-full bg-blackberry-500 rounded-md shadow-md"
                     onClick={() => handleProjectClick(i)}>
-                    <h3 className="absolute top-0 left-0 p-15 text-blackberry font-bold text-20">
+                    <h3 className="absolute top-15 left-0 px-15 py-[5px] text-blackberry font-bold text-16 text-white/80 bg-blackberry-500 rounded-r-md shadow-md">
                       {work.title}
                     </h3>
                   </Button>

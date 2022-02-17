@@ -23,7 +23,10 @@ const works = [
 
       "The backend is made using Express where its primary function is to fetch and cache the relevant data from the Youtube Data API for the frontend to use. With the Youtube Data API having a cap of 10,000 quotas, the cache functionality greatly reduced the number of times the app has to call the Youtube Data API which enables thousands of users to use the web app without having to worry about data not being transmitted due to the quota reaching its cap. The backend is deployed and managed in Heroku. It faces a cold start when not used after 30 minutes but once fired up, the app will run smoothly.",
     ],
-    problems: [],
+    problems: [
+      "Displaying multiple videos in different layouts.",
+      "Exceeding Youtube Data API's 10,000 quotas too fast.",
+    ],
     solutions: [],
     github: null,
     link: "https://myoshis.ch",
