@@ -14,10 +14,6 @@ const Works: React.FC<Props> = ({ className, ...props }) => {
   const { projectIndex } = useContext(ProjectNavigationContext);
   const youtubeRefArr = [];
 
-  works.forEach((work, i) => {
-    youtubeRefArr[i] = useRef();
-  });
-
   useEffect(() => {
     if (!currentPlayer) {
       return;
