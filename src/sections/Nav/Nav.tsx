@@ -34,12 +34,12 @@ function Nav({ className, ...props }) {
         <div className="hidden md:block">
           <ul className="flex gap-30 lg:gap-40 justify justify-end font-bold">
             {routes.map(({ name, route }, i) => (
-              <li
-                key={i}
-                className={`text-16 ${
-                  active === route ? "text-plum text-bold" : "hover:text-white hover:opacity-70"
-                }`}>
-                <button className="tracking-wide" onClick={() => handleNavigation(route)}>
+              <li key={i}>
+                <button
+                  className={`tracking-wide text-16 ${
+                    active === route ? "text-plum font-bold" : "hover:text-white hover:opacity-70"
+                  }`}
+                  onClick={() => handleNavigation(route)}>
                   {name}
                 </button>
               </li>
