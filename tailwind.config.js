@@ -28,6 +28,7 @@ module.exports = {
         inherit: "inherit",
         orbit: "1500px",
         nav: "50px",
+        5: "5px",
         8: "8px",
         10: "10px",
         12: "12px",

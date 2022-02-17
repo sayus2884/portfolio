@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
 
@@ -8,7 +9,22 @@ import Button from "../components/Button/Button";
 import works from "../utils/works";
 
 import ProjectNavigationContext from "./../contexts/ProjectNavigationContext";
-import Socials from "./../sections/Socials/Socials";
+import { CaretDoubleRight } from "phosphor-react";
+
+interface CTAProps {
+  className?: string;
+}
+
+const CTA: React.FC<CTAProps> = ({ className }) => {
+  return (
+    <Link href="/works">
+      <button
+        className={`${className} bg-red-500 text-white px-10 py-5 rounded-md font-bold flex gap-[5px] items-center border border-red-500 hover:bg-red-600 text-blackberry-500 hover:text-white`}>
+        View Works <CaretDoubleRight size={20} weight={"bold"} />
+      </button>
+    </Link>
+  );
+};
 
 function Home() {
   const { navigateTo } = useContext(ProjectNavigationContext);
@@ -37,7 +53,7 @@ function Home() {
             </p>
 
             <div className="min-w-[450px]">
-              <Socials className="hidden lg:flex gap-30 w-full" size={22} />
+              <CTA className="hidden lg:flex p-10" />
             </div>
           </div>
         </div>
@@ -45,7 +61,7 @@ function Home() {
         <div className="px-15 lg:pl-0 lg:pr-[80px] pb-40 lg:mb-0 lg:max-w-[800px]">
           <div className="lg:hidden flex justify-between w-full items-center mb-15 mt-35">
             <h2 className="font-header text-24">My Works</h2>
-            <Socials className="gap-20" />
+            <CTA className="lg:hidden" />
           </div>
 
           <div className="flex items-center h-full ">
