@@ -86,7 +86,7 @@ const Project: React.FC<Props> = ({
           <div className="flex gap-10 w-fit self-end">
             {link && (
               <Button className="w-fit self-end">
-                <a href={link} target="_blank" className="flex gap-8 items-center">
+                <a href={link} target="_blank" rel="noreferrer" className="flex gap-8 items-center">
                   <Browser weight="bold" />
                   <span>Demo</span>
                 </a>
@@ -95,7 +95,11 @@ const Project: React.FC<Props> = ({
 
             {github && (
               <Button className="w-fit self-end">
-                <a href={github} target="_blank" className="flex gap-8 items-center">
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex gap-8 items-center">
                   <GithubLogo weight="bold" />
                   <span>Source</span>
                 </a>
