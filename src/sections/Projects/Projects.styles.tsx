@@ -18,4 +18,21 @@ export const CustomSwiper = styled(Swiper)`
       margin: 0;
     }
   }
+
+  & > .swiper-button-next,
+  .swiper-button-prev {
+    font-weight: bold;
+    display: none;
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  & > .swiper-button-next {
+    margin-right: 5px;
+  }
+
+  & > .swiper-button-prev {
+    margin-left: 5px;
+  }
 `;

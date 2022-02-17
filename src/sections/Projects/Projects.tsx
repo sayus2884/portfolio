@@ -24,6 +24,10 @@ const Projects: React.FC<Props> = ({ className, projects, index }) => {
       onSwiper={(swiper) => {
         swiper.slideTo(index);
       }}
+      navigation={true}
+      breakpoints={{
+        800: {},
+      }}
       modules={[Pagination, Navigation]}>
       {projects.map((work, i) => (
         <SwiperSlide key={i}>
