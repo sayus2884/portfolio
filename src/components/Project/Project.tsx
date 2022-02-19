@@ -9,12 +9,15 @@ export interface ProjectProps {
   title: string;
   imageUrl?: string;
   technologies: string[];
+  role: string;
   description: string[];
+  challenge: string;
+  process: string[];
   problems: string[];
   solutions: string[];
-  link: string;
+  takeAways: string[];
   github: string;
-  ytVideoId: string;
+  link: string;
 }
 
 interface Props extends ProjectProps {
@@ -26,12 +29,15 @@ const Project: React.FC<Props> = ({
   imageUrl,
   title,
   description,
+  challenge,
   problems,
+  process,
   solutions,
+  takeAways,
   technologies,
   link,
   github,
-  ytVideoId,
+  role,
   ...props
 }) => {
   return (
@@ -56,7 +62,29 @@ const Project: React.FC<Props> = ({
 
             <div className="flex flex-col gap-20">
               {description.map((text, i) => (
-                <div key={i}>{text}</div>
+                <p key={i}>{text}</p>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-22 font-bold mb-10">Role</h3>
+
+            <p className="flex flex-col gap-20">{role}</p>
+          </div>
+
+          <div>
+            <h3 className="text-22 font-bold mb-10">The Challenge</h3>
+
+            <p className="flex flex-col gap-20">{challenge}</p>
+          </div>
+
+          <div>
+            <h3 className="text-22 font-bold mb-10">Thought Process</h3>
+
+            <div className="flex flex-col gap-20">
+              {process.map((text, i) => (
+                <p key={i}>{text}</p>
               ))}
             </div>
           </div>
@@ -78,7 +106,7 @@ const Project: React.FC<Props> = ({
 
             <div className="flex flex-col gap-20">
               {solutions.map((text, i) => (
-                <div key={i}>{text}</div>
+                <p key={i}>{text}</p>
               ))}
             </div>
           </div>
