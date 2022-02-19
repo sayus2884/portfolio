@@ -30,7 +30,7 @@ const About: React.FC<Props> = ({ className, ...props }) => {
               My name is Jonacius Villamor and I am a full stack developer based in British
               Columbia, Canada. I build web apps with careful thought and efficiency using
               Typescript, React, and Express. I enjoy drawing which taught me some pretty useful
-              UX/UI techniques such as prototyping and designing, making the coding process quick.
+              UX/UI techniques such as prototyping and designing; making the coding process quick.
             </p>
 
             <p className="text-16">

@@ -2,7 +2,6 @@ const works = [
   {
     title: "The Bug Tracker",
     imageUrl: "/images/bug_tracker.png",
-    demoVideo: "",
     technologies: ["Typescript", "NextJs", "TailwindCSS"],
     role: "Research, prototyping, programming",
     description: [
@@ -32,7 +31,6 @@ const works = [
   {
     title: "My Portfolio",
     imageUrl: "/images/portfolio.png",
-    demoVideo: "",
     technologies: ["Typescript", "NextJs", "TailwindCSS"],
     role: "Research, prototyping, programming",
     description: [
@@ -60,7 +58,6 @@ const works = [
   {
     title: "MyOshis.ch",
     imageUrl: "/images/myoshis.png",
-    demoVideo: "",
     technologies: ["NextJs", "TailwindCSS", "Express", "Youtube Data API"],
     role: "Research, prototyping, programming",
     description: [
