@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Button from "../../components/Button/Button";
 
 function Nav({ className, ...props }) {
   const router = useRouter();
@@ -31,21 +32,22 @@ function Nav({ className, ...props }) {
       </div>
 
       <nav>
-        <div className="hidden md:block">
-          <ul className="flex gap-30 lg:gap-40 justify justify-end font-bold">
-            {routes.map(({ name, route }, i) => (
-              <li key={i}>
-                <button
-                  className={`tracking-wide text-16 ${
-                    active === route ? "text-plum font-bold" : "hover:text-white hover:opacity-70"
-                  }`}
-                  onClick={() => handleNavigation(route)}>
-                  {name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className="flex gap-30 lg:gap-40 justify justify-end font-bold items-center">
+          {routes.map(({ name, route }, i) => (
+            <li key={i}>
+              <button
+                className={`tracking-wide text-16  hidden md:block ${
+                  active === route ? "text-red-500" : "hover:text-white hover:opacity-70"
+                }`}
+                onClick={() => handleNavigation(route)}>
+                {name}
+              </button>
+            </li>
+          ))}
+          <li>
+            <Button>Resume</Button>
+          </li>
+        </ul>
       </nav>
     </section>
   );

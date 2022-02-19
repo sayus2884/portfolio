@@ -32,8 +32,8 @@ const Button: React.FC<Props> = ({
 
   return (
     <button
-      className={`${className} border border-plum text-plum px-15 py-10 rounded-sm ${
-        !disabled && "hover:bg-plum hover:text-white"
+      className={`${className} border border-red-500 bg-black/20 text-red-500 px-15 py-10 rounded-sm ${
+        !disabled && "hover:bg-red-500 hover:text-white"
       } ${disabled && "cursor-default"}`}
       disabled={disabled}
       {...props}>

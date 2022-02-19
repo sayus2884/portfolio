@@ -14,7 +14,7 @@ const About: React.FC<Props> = ({ className, ...props }) => {
           <div>
             <img
               src="/images/profile.png"
-              className="h-200 rounded-full border-2 border-plum mb-24"
+              className="h-200 rounded-full border-2 border-red-500 mb-24"
             />
 
             <Socials className="gap-25 justify-center" size={24} />
@@ -27,10 +27,10 @@ const About: React.FC<Props> = ({ className, ...props }) => {
             </p>
 
             <p className="text-16">
-              My name is Jonacius Villamor and I am a fullstack developer based in British Columbia,
-              Canada. I build web apps with careful thought and efficiency using Typescript, React,
-              and Express. I enjoy drawing which taught me some pretty useful UX/UI techniques such
-              as prototyping and designing, making the coding process quick.
+              My name is Jonacius Villamor and I am a full stack developer based in British
+              Columbia, Canada. I build web apps with careful thought and efficiency using
+              Typescript, React, and Express. I enjoy drawing which taught me some pretty useful
+              UX/UI techniques such as prototyping and designing, making the coding process quick.
             </p>
 
             <p className="text-16">

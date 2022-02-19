@@ -27,7 +27,7 @@ module.exports = {
       spacing: {
         inherit: "inherit",
         orbit: "1500px",
-        nav: "50px",
+        nav: "70px",
         5: "5px",
         8: "8px",
         10: "10px",

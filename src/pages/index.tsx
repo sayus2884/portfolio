@@ -10,6 +10,7 @@ import works from "../utils/works";
 
 import ProjectNavigationContext from "./../contexts/ProjectNavigationContext";
 import { CaretDoubleRight } from "phosphor-react";
+import Socials from "./../sections/Socials/Socials";
 
 interface CTAProps {
   className?: string;
@@ -52,7 +53,8 @@ function Home() {
               Full Stack Web Developer | Jonacius V.
             </p>
 
-            <div className="min-w-[450px]">
+            <div className="min-w-[450px] flex gap-20 items-center">
+              <Socials className="gap-20" size={24} />
               <CTA className="hidden lg:flex p-10" />
             </div>
           </div>
