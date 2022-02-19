@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+
 import Socials from "../sections/Socials/Socials";
 import Button from "./../components/Button/Button";
 
@@ -12,9 +14,11 @@ const About: React.FC<Props> = ({ className, ...props }) => {
       <div className="flex justify-center py-40">
         <div className="flex flex-col gap-45 max-w-650 items-center">
           <div>
-            <img
+            <Image
+              alt="Picture of developer"
               src="/images/profile.png"
               className="h-200 rounded-full border-2 border-red-500 mb-24"
+              priority
             />
 
             <Socials className="gap-25 justify-center" size={24} />
@@ -34,10 +38,10 @@ const About: React.FC<Props> = ({ className, ...props }) => {
             </p>
 
             <p className="text-16">
-              I like a lot of mediums; from listening to edgy 2000&apos;s music to learning new
-              Science discoveries from Sci Show to watching cutesy, uwu Vtuber streamers, play
-              games. Exposing myself to a variety of interesting things give me a lot of perspective
-              to the world around me which then, inspire me to build apps creatively.
+              I like a lot of mediums; from listening to edgy 2000&apos;s music to looking into
+              amazing illustrations to watching Vtuber streamers, play games. Exposing myself to a
+              variety of interesting things give me a lot of perspective of the world around me,
+              inspiring me to build apps creatively.
             </p>
 
             <p className="text-16">Ready to work together?</p>

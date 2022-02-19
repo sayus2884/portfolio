@@ -25,13 +25,16 @@ export default function handler(req, res) {
       to: "contact@jonacius-villamor.com",
       subject: `[Contact] A Message from ${name}`,
       text: message,
-      html: `<p>${message}</p>`,
+      html: `<div>
+      <p>email: ${email}</p>
+      <p>${message}</p>
+      </div>`,
     })
 
-    .then((result) => {
+    .then(() => {
       res.status(200).end();
     })
-    .catch((err) => {
+    .catch(() => {
       res.status(500).end();
     });
 }
