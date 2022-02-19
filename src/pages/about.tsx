@@ -17,11 +17,13 @@ const About: React.FC<Props> = ({ className, ...props }) => {
             <Image
               alt="Picture of developer"
               src="/images/profile.png"
-              className="h-200 rounded-full border-2 border-red-500 mb-24"
+              className="rounded-full border-2 border-red-500"
+              height={200}
+              width={200}
               priority
             />
 
-            <Socials className="gap-25 justify-center" size={24} />
+            <Socials className="gap-25 justify-center mt-24" size={24} />
           </div>
 
           <div className="flex flex-col gap-30 px-20 sm:px-45">

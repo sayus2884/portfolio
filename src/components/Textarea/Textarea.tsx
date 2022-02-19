@@ -1,6 +1,10 @@
 import React from "react";
 
-interface Props {
+interface Props
+  extends React.DetailedHTMLProps<
+    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+  > {
   className?: string;
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 
-interface Props {
+interface Props
+  extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   className?: string;
 }
 

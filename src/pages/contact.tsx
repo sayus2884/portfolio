@@ -131,12 +131,11 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
           <span className="block mb-[5px]">What do you have in mind?</span>
           <Textarea
             className="bg-transparent border border-moonlight h-180 p-15 w-full rounded"
-            type="text"
             name="message"
             value={message}
             onChange={handleMessageChange}
-            minLength="2"
-            maxLength="1000"
+            minLength={2}
+            maxLength={1000}
             required
           />
         </label>
