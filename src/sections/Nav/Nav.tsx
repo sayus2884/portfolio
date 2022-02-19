@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Button from "../../components/Button/Button";
+import Image from "next/image";
 
 function Nav({ className, ...props }) {
   const router = useRouter();
@@ -27,7 +28,7 @@ function Nav({ className, ...props }) {
       className={`${className} flex flex-row justify-between items-center z-50 md:px-20 lg:px-60 xl:px-80`}>
       <div className="flex space-x-8">
         <button onClick={() => handleNavigation("/")}>
-          <h1 className="font-header cursor-pointer text-16">Jonacius Villamor</h1>
+          <Image src="/logo.svg" width={32} height={32} priority className="cursor-pointer" />
         </button>
       </div>
 
