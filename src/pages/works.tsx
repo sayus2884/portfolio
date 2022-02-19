@@ -10,9 +10,8 @@ interface Props {
 }
 
 const Works: React.FC<Props> = ({ className, ...props }) => {
-  const [currentPlayer, setCurrenPlayer] = useState(null);
+  const [currentPlayer] = useState(null);
   const { projectIndex } = useContext(ProjectNavigationContext);
-  const youtubeRefArr = [];
 
   useEffect(() => {
     if (!currentPlayer) {
