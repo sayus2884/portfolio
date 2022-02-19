@@ -1,7 +1,6 @@
 import React from "react";
 import { GithubLogo, Browser } from "phosphor-react";
 
-import YTEmbedder from "../YTEmbedder/YTEmbedder";
 import Button from "../Button/Button";
 import { ImageBanner } from "./Project.styles";
 
