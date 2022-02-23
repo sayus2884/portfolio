@@ -21,6 +21,7 @@ const Projects: React.FC<Props> = ({ className, projects, index }) => {
       pagination={{
         clickable: true,
       }}
+      loop={true}
       onSwiper={(swiper) => {
         swiper.slideTo(index);
       }}
