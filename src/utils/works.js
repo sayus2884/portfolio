@@ -2,7 +2,7 @@ const works = [
   {
     title: "The Bug Tracker",
     imageUrl: "/images/bug_tracker.png",
-    technologies: ["Typescript", "NextJs", "TailwindCSS"],
+    technologies: ["Typescript", "NextJs", "TailwindCSS", "PouchDB"],
     role: "Research, prototyping, programming",
     description: [
       "The bug tracker is a task management and bug tracking web application. Featuring a kanban-based style of project management, it increases productivity by letting individuals work on small, and digestable tasks, avoiding burn outs from working on bigger, breakable tasks.",
@@ -16,11 +16,15 @@ const works = [
 
       "It was then decided that the app itself would be used in managing the tasks as it is being developed. So, a basic minimum viable product (MVP) was created based on a mockup created.",
     ],
-    problems: ["The project itself is large.", "Javascript is unmaintanable in the long run."],
+    problems: [
+      "The project itself is large.",
+      "Javascript is unmaintanable in the long run.",
+      "Cookie's small storage capacity.",
+    ],
     solutions: [
       "Since the project is rather large, it needs to be broken down into more manageable chunks. That is why it will be divided into three development phases: kanban board development, storage management, and issue tracking development.",
-      "The first phase will be focused on developing the task management board which will then be used to manage tasks for the remaining phases",
-      "The second phase will be focusing more on solving the storage issue. Cookies and local storage is good for prototyping but not practical for a full blown app due to  the lack of storage capacity. This phase will also finalize the data structure so it won't be a hassle on the third phase.",
+      "The first phase was focused on developing the task management board which will then be used to manage tasks for the remaining phases",
+      "The second phase was focused more on solving the storage issue. Cookies and the local storage are good for prototyping but not practical for a full blown app due to  the lack of storage capacity. PouchDB was introduced as the best solution as it uses about 50% of the computer's storage capacity as opposed to Cookie's 4k capacity.",
       "The third phase will be focusing on developing the issue tracker and improving the application's overall UI and UX.",
       "Visual Studio Code and Typescript are used to better maintain the code as they are well-equiped in minimizing cluttered, unreadable code with a low learning curve to use.",
     ],
