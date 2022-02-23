@@ -12,7 +12,7 @@ const works = [
     process: [
       "Before starting to code, researching other products in the market that deals with project management was necessary to find out the basic characteristics of what the app would need and look like. I decided to use Github's issue tracker and Trello's board system to base the app on as they were intuitive to use.",
 
-      "The board feature helps to facilitate for a kanban-based project management style, an effective system for managing tasks and clear indicator for the development progress. While, the issue tracker would help in clarifying certain tasks and serve as a type of documentation during development.",
+      "The board feature helps to facilitate a kanban-based project management style, an effective system for managing tasks and clear indicator for the development progress. While, the issue tracker would help in clarifying certain tasks and serve as a type of documentation during development.",
 
       "It was then decided that the app itself would be used in managing the tasks as it is being developed. So, a basic minimum viable product (MVP) was created based on a mockup created.",
     ],
