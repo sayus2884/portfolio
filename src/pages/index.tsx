@@ -84,7 +84,9 @@ function Home() {
 
         <div className="px-15 lg:pl-0 lg:pr-[80px] pb-40 lg:mb-0 lg:max-w-[800px]">
           <div className="lg:hidden flex justify-between w-full items-center mb-15 mt-35">
-            <h2 className="font-header text-24">My Works</h2>
+            <motion.h2 className="font-header text-24" variants={easeInRightVariants}>
+              My Works
+            </motion.h2>
             <CTA className="lg:hidden" />
           </div>
 
