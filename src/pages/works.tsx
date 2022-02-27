@@ -13,25 +13,12 @@ interface Props {
 }
 
 const Works: React.FC<Props> = ({ className, ...props }) => {
-  const [currentPlayer] = useState(null);
   const { projectIndex } = useContext(ProjectNavigationContext);
-
-  useEffect(() => {
-    if (!currentPlayer) {
-      return;
-    }
-
-    if (projectIndex !== 0) {
-      currentPlayer.stopVideo();
-    } else {
-      currentPlayer.playVideo();
-    }
-  }, [projectIndex]);
 
   return (
     <section className="flex flex-col gap-10 w-full">
       <div className="h-full">
-        <Projects projects={works} index={projectIndex} />
+        <Projects projects={works} index={projectIndex + 1} />
       </div>
     </section>
   );
