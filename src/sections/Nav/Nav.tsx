@@ -61,7 +61,11 @@ function Nav({ className, ...props }) {
             </motion.li>
           ))}
           <motion.li variants={easeInBottomVariants}>
-            <Button>Resume</Button>
+            <Button>
+              <a href="Jonacius_Villamor_Web_Dev.pdf" download>
+                Resume
+              </a>
+            </Button>
           </motion.li>
         </ul>
       </nav>
