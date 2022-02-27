@@ -4,6 +4,14 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
 
+import { motion } from "framer-motion";
+import {
+  VARIANTS,
+  staggerOptions,
+  easeInRightVariants,
+  easeInLeftVariants,
+} from "../utils/animations";
+
 import Button from "../components/Button/Button";
 
 import works from "../utils/works";
@@ -19,10 +27,11 @@ interface CTAProps {
 const CTA: React.FC<CTAProps> = ({ className }) => {
   return (
     <Link href="/works">
-      <button
-        className={`${className} bg-red-500 text-white px-10 py-5 rounded-md font-bold flex gap-[5px] items-center border border-red-500 hover:bg-red-600 text-blackberry-500 hover:text-white`}>
+      <motion.button
+        className={`${className} bg-red-500 text-white px-10 py-5 rounded-md font-bold flex gap-[5px] items-center border border-red-500 hover:bg-red-600 text-blackberry-500 hover:text-white`}
+        variants={easeInRightVariants}>
         View Works <CaretDoubleRight size={20} weight={"bold"} />
-      </button>
+      </motion.button>
     </Link>
   );
 };
@@ -37,7 +46,11 @@ function Home() {
   };
 
   return (
-    <section className="overflow-auto lg:bg-code-image w-full">
+    <motion.section
+      className="overflow-auto lg:bg-code-image w-full"
+      variants={staggerOptions({ delay: 0.4 })}
+      initial={VARIANTS.CLOSED}
+      animate={VARIANTS.OPEN}>
       <div className="hidden lg:block absolute inset-0 bg-black opacity-60"></div>
 
       <div className="relative h-full lg:grid lg:grid-cols-2 lg:z-50">
@@ -45,13 +58,17 @@ function Home() {
           <div className="absolute lg:hidden inset-0 bg-black opacity-20 z-10"></div>
 
           <div className="relative flex flex-col gap-10 lg:gap-20 justify-center items-center h-full z-50 text-left">
-            <h1 className="font-header max-w-[350px] sm:max-w-[450px] tracking-wider lg:tracking-[.2em] sm:tracking-normal sm:text-center md:text-left text-[20px] sm:text-[28px] md:text-[32px] lg:text-[46px] leading-tight">
+            <motion.h1
+              className="font-header max-w-[350px] sm:max-w-[450px] tracking-wider lg:tracking-[.2em] sm:tracking-normal sm:text-center md:text-left text-[20px] sm:text-[28px] md:text-[32px] lg:text-[46px] leading-tight"
+              variants={easeInRightVariants}>
               I make web apps with <span className="text-red-500">thought</span> &#38;{" "}
               <span className="text-red-500">efficiency</span>
-            </h1>
-            <p className="min-w-[350px] sm:min-w-[450px] sm:text-center md:text-left text-[12px] sm:text-[17px] md:text-20">
+            </motion.h1>
+            <motion.p
+              className="min-w-[350px] sm:min-w-[450px] sm:text-center md:text-left text-[12px] sm:text-[17px] md:text-20"
+              variants={easeInRightVariants}>
               Full Stack Web Developer | Jonacius V.
-            </p>
+            </motion.p>
 
             <div className="min-w-[450px] flex gap-20 items-center">
               <Socials className="gap-20" size={24} />
@@ -66,7 +83,7 @@ function Home() {
             <CTA className="lg:hidden" />
           </div>
 
-          <div className="flex items-center h-full ">
+          <motion.div className="flex items-center h-full " variants={easeInLeftVariants}>
             <Swiper
               slidesPerView={1}
               spaceBetween={10}
@@ -103,10 +120,10 @@ function Home() {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
