@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemedStyledFunction } from "styled-components";
+import { ForwardRefComponent, HTMLMotionProps, motion, Variants } from "framer-motion";
 import { CustomButton, ITheme } from "./Button.styles";
 
 interface Props
@@ -8,6 +8,7 @@ interface Props
   className?: string;
   disabled?: boolean;
   imageUr?: string;
+  variants?: Variants;
   onClick?: () => void;
 }
 
@@ -17,6 +18,7 @@ const Button: React.FC<Props> = ({
   disabled = false,
   onClick,
   imageUrl,
+  variants,
   ...props
 }) => {
   if (imageUrl)
@@ -25,20 +27,21 @@ const Button: React.FC<Props> = ({
         className={`${className}`}
         onClick={onClick}
         disabled={disabled}
-        imageUrl={imageUrl}>
+        imageUrl={imageUrl}
+        variants={variants}>
         {children}
       </CustomButton>
     );
 
   return (
-    <button
+    <motion.button
+      variants={variants}
       className={`${className} border border-red-500 bg-black/20 text-red-500 px-15 py-5 rounded-sm ${
         !disabled && "hover:bg-red-500 hover:text-white"
       } ${disabled && "cursor-default"}`}
-      disabled={disabled}
-      {...props}>
+      disabled={disabled}>
       {children}
-    </button>
+    </motion.button>
   );
 };
 

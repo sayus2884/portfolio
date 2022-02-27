@@ -69,15 +69,30 @@ export const easeInBottomVariants = {
   },
 };
 
-export const scaleDownVariants = {
+export const scaleUpVariants = {
   [VARIANTS.OPEN]: {
+    opacity: 1,
     scale: 1,
     transition: {
       duration: 0.3,
-      type: "tween",
     },
   },
   [VARIANTS.CLOSED]: {
+    opacity: 0,
+    scale: 0,
+  },
+};
+
+export const scaleDownVariants = {
+  [VARIANTS.OPEN]: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  [VARIANTS.CLOSED]: {
+    opacity: 0,
     scale: 2,
   },
 };
