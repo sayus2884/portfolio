@@ -3,6 +3,9 @@ import { isEmail } from "validator";
 import axios from "axios";
 import { PaperPlaneTilt, LinkBreak, SpinnerGap } from "phosphor-react";
 
+import { motion } from "framer-motion";
+import { VARIANTS, easeInRightVariants, staggerOptions } from "../utils/animations";
+
 import Input from "../components/Input/Input";
 import Textarea from "../components/Textarea/Textarea";
 import Button from "../components/Button/Button";
@@ -18,13 +21,17 @@ interface Props {
   className?: string;
 }
 
-const Contact: React.FC<Props> = ({ children, className, ...props }) => {
+const Contact: React.FC<Props> = ({ children, className }) => {
   const [messageSent, setMessageSent] = useState(false);
   const [messageSentFailed, setMessageSentFailed] = useState(false);
   const { name, setNameValue } = useContact();
 
   return (
-    <div className="bg-blackberry lg:rounded-l-lg w-full overflow-auto">
+    <motion.div
+      className="bg-blackberry lg:rounded-l-lg w-full overflow-auto"
+      variants={staggerOptions({ delay: 0.4 })}
+      initial={VARIANTS.CLOSED}
+      animate={VARIANTS.OPEN}>
       <div className="flex justify-center py-20 lg:py-40 h-full">
         <div className="flex flex-col gap-30 w-full md:max-w-500 px-20 md:px-40 lg:px-0 items-center">
           <ContactContext.Provider value={{ name, setNameValue }}>
@@ -41,7 +48,7 @@ const Contact: React.FC<Props> = ({ children, className, ...props }) => {
           </ContactContext.Provider>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -99,10 +106,14 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
 
   return (
     <>
-      <h2 className="text-32 font-header tracking-widest w-full">Get In Touch!</h2>
+      <motion.h2
+        className="text-32 font-header tracking-widest w-full"
+        variants={easeInRightVariants}>
+        Get In Touch!
+      </motion.h2>
 
       <form className="flex flex-col gap-24 w-full" onSubmit={handleSubmit}>
-        <label className="w-full">
+        <motion.label className="w-full" variants={easeInRightVariants}>
           <span className="block mb-[5px]">Name</span>
           <Input
             className="bg-transparent border border-moonlight p-15 w-full rounded"
@@ -113,9 +124,9 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
             id="name"
             required
           />
-        </label>
+        </motion.label>
 
-        <label>
+        <motion.label variants={easeInRightVariants}>
           <span className="block mb-[5px]">Email</span>
           <Input
             className="bg-transparent border border-moonlight p-15 w-full rounded"
@@ -125,9 +136,9 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
             value={email}
             required
           />
-        </label>
+        </motion.label>
 
-        <label>
+        <motion.label variants={easeInRightVariants}>
           <span className="block mb-[5px]">What do you have in mind?</span>
           <Textarea
             className="bg-transparent border border-moonlight h-180 p-15 w-full rounded"
@@ -138,12 +149,13 @@ const Form: React.FC<FormProps> = ({ onMessageSent, onMessageSentFailed }) => {
             maxLength={1000}
             required
           />
-        </label>
+        </motion.label>
 
         <Button
           type="submit"
           className="flex justify-center text-24 text-moonlight border border-moonlight w-full rounded p-10 disabled:opacity-50 disabled:cursor-default"
-          disabled={!isFormFilled}>
+          disabled={!isFormFilled}
+          variants={easeInRightVariants}>
           {sending ? <SpinnerGap className="animate-spin" size={32} /> : "Send"}
         </Button>
       </form>
