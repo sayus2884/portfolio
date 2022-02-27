@@ -13,7 +13,9 @@ interface Props {
 }
 
 const Works: React.FC<Props> = ({ className, ...props }) => {
-  const { projectIndex } = useContext(ProjectNavigationContext);
+  const { projectIndex, navigateTo } = useContext(ProjectNavigationContext);
+
+  useEffect(() => () => navigateTo(0));
 
   return (
     <section className="flex flex-col gap-10 w-full">
