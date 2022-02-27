@@ -56,11 +56,11 @@ function Home() {
       variants={staggerOptions({ delay: 0.4 })}
       initial={VARIANTS.CLOSED}
       animate={VARIANTS.OPEN}>
-      <div className="hidden lg:block absolute inset-0 bg-black opacity-60"></div>
+      <div className="hidden lg:block absolute inset-0 bg-black opacity-70"></div>
 
       <div className="relative h-full lg:grid lg:grid-cols-2 lg:z-50">
         <div className="relative bg-code-image lg:bg-none bg-center bg-no-repeat bg-cover h-[250px] sm:h-[350px] md:h-[400px] lg:h-full w-full">
-          <div className="absolute lg:hidden inset-0 bg-black opacity-20 z-10"></div>
+          <div className="absolute lg:hidden inset-0 bg-black opacity-60 z-10"></div>
 
           <div className="relative flex flex-col gap-10 lg:gap-20 justify-center items-center h-full z-50 text-left">
             <motion.h1
