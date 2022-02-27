@@ -1,4 +1,19 @@
-const works = [
+export interface Work {
+  title: string;
+  imageUrl: string;
+  technologies: string[];
+  role: string;
+  description: string[];
+  challenge: string;
+  process: string[];
+  problems: string[];
+  solutions: string[];
+  takeAways: string[];
+  github: string;
+  link: string;
+}
+
+const works: Work[] = [
   {
     title: "The Bug Tracker",
     imageUrl: "/images/bug_tracker.png",

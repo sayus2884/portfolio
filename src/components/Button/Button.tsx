@@ -7,7 +7,6 @@ interface Props
     ITheme {
   className?: string;
   disabled?: boolean;
-  imageUr?: string;
   variants?: Variants;
   onClick?: () => void;
 }
@@ -17,17 +16,17 @@ const Button: React.FC<Props> = ({
   children,
   disabled = false,
   onClick,
-  imageUrl,
+  imageurl,
   variants,
   ...props
 }) => {
-  if (imageUrl)
+  if (imageurl)
     return (
       <CustomButton
         className={`${className}`}
         onClick={onClick}
         disabled={disabled}
-        imageUrl={imageUrl}
+        imageurl={imageurl}
         variants={variants}>
         {children}
       </CustomButton>

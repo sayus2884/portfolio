@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +14,7 @@ import {
 
 import Button from "../components/Button/Button";
 
-import works from "../utils/works";
+import worksData, { Work } from "../utils/works";
 
 import ProjectNavigationContext from "./../contexts/ProjectNavigationContext";
 import { CaretDoubleRight } from "phosphor-react";
@@ -39,11 +39,16 @@ const CTA: React.FC<CTAProps> = ({ className }) => {
 function Home() {
   const { navigateTo } = useContext(ProjectNavigationContext);
   const router = useRouter();
+  const [works, setWorks] = useState<Work[]>([]);
 
   const handleProjectClick = (index) => {
     navigateTo(index);
     router.push("/works");
   };
+
+  useEffect(() => {
+    setWorks(worksData);
+  }, []);
 
   return (
     <motion.section
@@ -107,18 +112,20 @@ function Home() {
                 },
               }}
               modules={[Pagination, Navigation, Autoplay]}>
-              {works.map((work, i) => (
-                <SwiperSlide key={i}>
-                  <Button
-                    imageUrl={work.imageUrl}
-                    className="relative h-480 w-full bg-blackberry-500 rounded-md shadow-md"
-                    onClick={() => handleProjectClick(i)}>
-                    <h3 className="absolute top-15 left-0 px-15 py-[5px] font-bold text-16 text-white/80 bg-blackberry-500 rounded-r-md shadow-md">
-                      {work.title}
-                    </h3>
-                  </Button>
-                </SwiperSlide>
-              ))}
+              {works.map((work, i) => {
+                return (
+                  <SwiperSlide key={i}>
+                    <Button
+                      imageurl={work.imageUrl}
+                      className="relative h-480 w-full bg-blackberry-500 rounded-md shadow-md"
+                      onClick={() => handleProjectClick(i)}>
+                      <h3 className="absolute top-15 left-0 px-15 py-[5px] font-bold text-16 text-white/80 bg-blackberry-500 rounded-r-md shadow-md">
+                        {work.title}
+                      </h3>
+                    </Button>
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </motion.div>
         </div>
