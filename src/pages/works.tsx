@@ -1,5 +1,8 @@
 import { useContext, useEffect, useRef, useState } from "react";
 
+import { motion } from "framer-motion";
+import { VARIANTS, staggerOptions } from "../utils/animations";
+
 import ProjectNavigationContext from "../contexts/ProjectNavigationContext";
 
 import works from "../utils/works";
